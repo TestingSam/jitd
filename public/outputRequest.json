@@ -1,0 +1,304 @@
+[
+	{
+		"url": {
+			"protocol": "https",
+			"path": [
+				"statistics"
+			],
+			"host": [
+				"covid-193",
+				"p",
+				"rapidapi",
+				"com"
+			],
+			"query": [
+				{
+					"key": "country",
+					"value": "USA"
+				}
+			],
+			"variable": []
+		},
+		"header": [
+			{
+				"key": "x-rapidapi-host",
+				"value": "covid-193.p.rapidapi.com"
+			},
+			{
+				"key": "x-rapidapi-key",
+				"value": "dd44d0a755msh52836eccd71549bp127125jsn8a184ed28c8d"
+			},
+			{
+				"key": "User-Agent",
+				"value": "PostmanRuntime/7.24.2",
+				"system": true
+			},
+			{
+				"key": "Accept",
+				"value": "*/*",
+				"system": true
+			},
+			{
+				"key": "Cache-Control",
+				"value": "no-cache",
+				"system": true
+			},
+			{
+				"key": "Postman-Token",
+				"value": "9815d477-0064-41b4-a4be-4d97e422c928",
+				"system": true
+			},
+			{
+				"key": "Host",
+				"value": "covid-193.p.rapidapi.com",
+				"system": true
+			},
+			{
+				"key": "Accept-Encoding",
+				"value": "gzip, deflate, br",
+				"system": true
+			},
+			{
+				"key": "Connection",
+				"value": "keep-alive",
+				"system": true
+			}
+		],
+		"method": "GET",
+		"body": {
+			"mode": "raw",
+			"raw": ""
+		}
+	},
+	{
+		"url": {
+			"protocol": "https",
+			"path": [
+				"countries"
+			],
+			"host": [
+				"covid-193",
+				"p",
+				"rapidapi",
+				"com"
+			],
+			"query": [],
+			"variable": []
+		},
+		"header": [
+			{
+				"key": "x-rapidapi-host",
+				"value": "covid-193.p.rapidapi.com"
+			},
+			{
+				"key": "x-rapidapi-key",
+				"value": "dd44d0a755msh52836eccd71549bp127125jsn8a184ed28c8d"
+			},
+			{
+				"key": "User-Agent",
+				"value": "PostmanRuntime/7.24.2",
+				"system": true
+			},
+			{
+				"key": "Accept",
+				"value": "*/*",
+				"system": true
+			},
+			{
+				"key": "Cache-Control",
+				"value": "no-cache",
+				"system": true
+			},
+			{
+				"key": "Postman-Token",
+				"value": "a9507100-ec4e-4e06-af9f-b65e05740cef",
+				"system": true
+			},
+			{
+				"key": "Host",
+				"value": "covid-193.p.rapidapi.com",
+				"system": true
+			},
+			{
+				"key": "Accept-Encoding",
+				"value": "gzip, deflate, br",
+				"system": true
+			},
+			{
+				"key": "Connection",
+				"value": "keep-alive",
+				"system": true
+			}
+		],
+		"method": "GET",
+		"body": {
+			"mode": "raw",
+			"raw": ""
+		}
+	},
+	{
+		"url": {
+			"protocol": "https",
+			"path": [
+				"history"
+			],
+			"host": [
+				"covid-193",
+				"p",
+				"rapidapi",
+				"com"
+			],
+			"query": [
+				{
+					"key": "country",
+					"value": "india"
+				}
+			],
+			"variable": []
+		},
+		"header": [
+			{
+				"key": "x-rapidapi-host",
+				"value": "covid-193.p.rapidapi.com"
+			},
+			{
+				"key": "x-rapidapi-key",
+				"value": "dd44d0a755msh52836eccd71549bp127125jsn8a184ed28c8d"
+			},
+			{
+				"key": "User-Agent",
+				"value": "PostmanRuntime/7.24.2",
+				"system": true
+			},
+			{
+				"key": "Accept",
+				"value": "*/*",
+				"system": true
+			},
+			{
+				"key": "Cache-Control",
+				"value": "no-cache",
+				"system": true
+			},
+			{
+				"key": "Postman-Token",
+				"value": "1815806c-27ec-495c-be7f-2df632449270",
+				"system": true
+			},
+			{
+				"key": "Host",
+				"value": "covid-193.p.rapidapi.com",
+				"system": true
+			},
+			{
+				"key": "Accept-Encoding",
+				"value": "gzip, deflate, br",
+				"system": true
+			},
+			{
+				"key": "Connection",
+				"value": "keep-alive",
+				"system": true
+			}
+		],
+		"method": "GET",
+		"body": {
+			"mode": "raw",
+			"raw": ""
+		}
+	},
+	{
+		"url": {
+			"protocol": "https",
+			"path": [
+				"public",
+				"actions"
+			],
+			"host": [
+				"api",
+				"newsfilter",
+				"io"
+			],
+			"query": [
+				{
+					"key": "token",
+					"value": "sti4ioroeaeiu972366rsyolszgdzxzvirhkg02jqjhelbinp9oisdfbafoauowe",
+					"system": true
+				}
+			],
+			"variable": []
+		},
+		"header": [
+			{
+				"name": "Content-Type",
+				"key": "Content-Type",
+				"value": "application/json"
+			},
+			{
+				"key": "User-Agent",
+				"value": "PostmanRuntime/7.24.2",
+				"system": true
+			},
+			{
+				"key": "Accept",
+				"value": "*/*",
+				"system": true
+			},
+			{
+				"key": "Cache-Control",
+				"value": "no-cache",
+				"system": true
+			},
+			{
+				"key": "Postman-Token",
+				"value": "f8b41181-9f9c-4608-a8b3-7ac3357bdede",
+				"system": true
+			},
+			{
+				"key": "Host",
+				"value": "api.newsfilter.io",
+				"system": true
+			},
+			{
+				"key": "Accept-Encoding",
+				"value": "gzip, deflate, br",
+				"system": true
+			},
+			{
+				"key": "Connection",
+				"value": "keep-alive",
+				"system": true
+			},
+			{
+				"key": "Content-Length",
+				"value": 67,
+				"system": true
+			}
+		],
+		"method": "POST",
+		"body": {
+			"mode": "raw",
+			"raw": "{\r\n  \"type\": \"filterArticles\",\r\n  \"queryString\": \"title:Covid19\"\r\n}"
+		},
+		"auth": {
+			"type": "apikey",
+			"apikey": [
+				{
+					"type": "string",
+					"value": "query",
+					"key": "in"
+				},
+				{
+					"type": "string",
+					"value": "token",
+					"key": "key"
+				},
+				{
+					"type": "string",
+					"value": "sti4ioroeaeiu972366rsyolszgdzxzvirhkg02jqjhelbinp9oisdfbafoauowe",
+					"key": "value"
+				}
+			]
+		}
+	}
+]

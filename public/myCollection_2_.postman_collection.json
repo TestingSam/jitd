@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "4d9cfff4-c55f-4190-83c6-e4f919bc59ae",
+		"name": "myCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetNews",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"type\": \"filterArticles\",\r\n  \"queryString\": \"title:covid19\"\r\n}"
+				},
+				"url": {
+					"raw": "https://api.newsfilter.io/public/actions?token=sti4ioroeaeiu972366rsyolszgdzxzvirhkg02jqjhelbinp9oisdfbafoauowe",
+					"protocol": "https",
+					"host": [
+						"api",
+						"newsfilter",
+						"io"
+					],
+					"path": [
+						"public",
+						"actions"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "sti4ioroeaeiu972366rsyolszgdzxzvirhkg02jqjhelbinp9oisdfbafoauowe"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

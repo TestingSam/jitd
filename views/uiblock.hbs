@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="title" content="Create page with Bootstrap">
+  <meta name="description" content="Create page with Bootstrap">
+  <meta name="keywords" content="Create page with Bootstrap">
+  <title>Bootstrap 4 Page Builder</title>
+  <!-- Le styles -->
+  <!-- <link href="css/bootstrap-combined.min.css" rel="stylesheet"> -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/example-styles.css">
+  <link rel="stylesheet" type="text/css" href="css/demo-styles.css">
+  <link href="css/toolbox.css" rel="stylesheet">
+  <link href="css/editor.css" rel="stylesheet">
+  <link href="css/docs.min.css" rel="stylesheet">
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+  <!-- Fav and touch icons -->
+  <link rel="shortcut icon" href="img/favicon.png">
+  <link href="css/other.css" rel="stylesheet">
+  <style>
+    .progress {
+      height: 300px;
+    }
+
+    .progress>svg {
+      height: 100%;
+      display: block;
+    }
+
+    .vex-content {
+      width: 700px;
+    }
+  </style>
+  <link rel="stylesheet" href="/css/vex/vex.css" />
+  <link rel="stylesheet" href="/css/vex/vex-theme-wireframe2.css" />
+  <link rel="stylesheet" href="/css/bootoast.css" />
+  <link rel="stylesheet" href="http://127.0.0.1:5000/css/jsontree.css">
+  <link rel="stylesheet" href="http://127.0.0.1:5000/css/jsonTreeWithLoad.css">
+
+</head>
+
+<body style="cursor: auto;" class="edit toolbox-reset">
+  <nav class="navbar navbar-default navbar-fixed-top bg-dark">
+    <div class="navbar-header" style="margin-right: 100px;">
+      <a class="navbar-brand emphasized1 text-white" href="#" id="BlockNameMentionedHere">
+        {{blockName}}
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3" style="overflow: scroll;">
+      <ul class="nav navbar-nav">
+        <li>
+          <div class="btn-group" style="margin-right: 20px;">
+            <button onclick="resizeCanvas('lg')" class="btn btn-secondary navbar-btn"><i class="fa fa-desktop"></i>
+            </button>
+            <button onclick="resizeCanvas('md')" class="btn btn-secondary navbar-btn"><i class="fa fa-laptop"></i>
+            </button>
+            <button onclick="resizeCanvas('sm')" class="btn btn-secondary navbar-btn"><i class="fa fa-tablet"></i>
+            </button>
+            <button onclick="resizeCanvas('xs')" class="btn btn-secondary navbar-btn"><i class="fa fa-mobile-phone"></i>
+            </button>
+          </div>
+        </li>
+        <li>
+          <div class="btn-group" data-toggle="buttons-radio">
+            <button id="edit" class="btn btn-secondary navbar-btn">
+              <i class="fa fa-edit"></i> Edit
+            </button>
+            <button type="button" class="btn btn-secondary navbar-btn" id="devpreview">
+              <i class="fa icon-eye-close" style="color: #333;"></i> Developer
+            </button>
+            <button type="button" class="btn btn-secondary navbar-btn" id="sourcepreview">
+              <i class="fa icon-eye-open" style="color: #333;"></i> Preview
+            </button>
+          </div>
+        </li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <div class="btn-group">
+            <button class="btn btn-danger navbar-btn" id="initComponent">
+              <i class="fa fa-hand-pointer-o" aria-hidden="true"></i></i>Initialize Component
+            </button>
+            <button class="btn btn-secondary navbar-btn" href="#clear" id="clear" color="#333;">
+              <i class="fa icon-trash" style="color: #333;"></i>Clear
+            </button>
+            <button type="button" class="btn btn-primary navbar-btn" data-target="#downloadModal"
+              rel="/build/downloadModal" role="button" data-toggle="modal">
+              <i class="fa icon-chevron-down"></i>Download
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="container-fluid">
+    <div class="changeDimension">
+      <div class="row-fluid">
+
+        <div class="">
+          <span></span>
+          <div class="sidebar-nav" style="overflow: scroll;">
+            <ul class="nav nav-list accordion-group" style="overflow: scroll;">
+              <li class="nav-header">
+                <div class="pull-right popover-info">
+                  <i class="icon-question-sign "></i>
+                  <div class="popover fade right">
+                    <div class="arrow"></div>
+                    <h3 class="popover-title">Help</h3>
+                    <div class="popover-content">TO CHANGE THE COLUMN CONFIGURATION YOU CAN EDIT THE DIFFERENT VALUES IN
+                      THE INPUT (THEY SHOULD ADD 12). IF YOU NEED MORE INFO PLEASE VISIT <a target="_blank"
+                        href="http://twitter.github.io/bootstrap/scaffolding.html#gridSystem"> BOOTSTRAP GRID SYSTEM</a>
+                    </div>
+                  </div>
+                </div>
+                <i class="icon-plus icon-white"></i> GRID SYSTEM
+              </li>
+              <li style="display: list-item;" class="rows" id="estRows">
+                <div class="lyrow ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">
+                    <input value="12" type="text">
+                  </div>
+                  <div class="view">
+                    <div class="row-fluid clearfix">
+                      <div class="col-xs-12 column"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="lyrow ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">
+                    <input value="4 4 4" type="text">
+                  </div>
+                  <div class="view">
+                    <div class="row-fluid clearfix">
+                      <div class="col-xs-4 column"></div>
+                      <div class="col-xs-4 column"></div>
+                      <div class="col-xs-4 column"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="lyrow ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">
+                    <input value="2 10" type="text">
+                  </div>
+                  <div class="view">
+                    <div class="row-fluid clearfix">
+                      <div class="col-xs-2 column"></div>
+                      <div class="col-xs-10 column"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="lyrow ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">
+                    <input value="3 9" type="text">
+                  </div>
+                  <div class="view">
+                    <div class="row-fluid clearfix">
+                      <div class="col-xs-3 column"></div>
+                      <div class="col-xs-9 column"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="lyrow ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">
+                    <input value="4 8" type="text">
+                  </div>
+                  <div class="view">
+                    <div class="row-fluid clearfix">
+                      <div class="col-xs-4 column"></div>
+                      <div class="col-xs-8 column"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="lyrow ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">
+                    <input value="6 6" type="text">
+                  </div>
+                  <div class="view">
+                    <div class="row-fluid clearfix">
+                      <div class="col-xs-6 column"></div>
+                      <div class="col-xs-6 column"></div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="lyrow ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">
+                    <input value="8 4" type="text">
+                  </div>
+                  <div class="view">
+                    <div class="row-fluid clearfix">
+                      <div class="col-xs-8 column"></div>
+                      <div class="col-xs-4 column"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="lyrow ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">
+                    <input value="9 3" type="text">
+                  </div>
+                  <div class="view">
+                    <div class="row-fluid clearfix">
+                      <div class="col-xs-9 column"></div>
+                      <div class="col-xs-3 column"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="lyrow ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">
+                    <input value="10 2" type="text">
+                  </div>
+                  <div class="view">
+                    <div class="row-fluid clearfix">
+                      <div class="col-xs-10 column"></div>
+                      <div class="col-xs-2 column"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="lyrow ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">
+                    <input value="equals" type="text">
+                  </div>
+                  <div class="view">
+                    <div class="row">
+                      <div class="col column"></div>
+                      <div class="col column"></div>
+                      <div class="w-100"></div>
+                      <div class="col column"></div>
+                      <div class="col column"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="lyrow ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">
+                    <input value="4 4 8 4" type="text">
+                  </div>
+                  <div class="view">
+                    <div class="row">
+                      <div class="col column"></div>
+                      <div class="col column"></div>
+                      <div class="col column"></div>
+                      <div class="col column"></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-8 column"></div>
+                      <div class="col-4 column"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="lyrow ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">
+                    <input value="Horizontal" type="text">
+                  </div>
+                  <div class="view">
+                    <div class="row">
+                      <div class="col-sm-8 column"></div>
+                      <div class="col-sm-4 column"></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm column"></div>
+                      <div class="col-sm column"></div>
+                      <div class="col-sm column"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="lyrow ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">
+                    <input value="Mix and match" type="text">
+                  </div>
+                  <div class="view">
+                    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+                    <div class="row">
+                      <div class="col col-md-8 column"></div>
+                      <div class="col-6 col-md-4 column"></div>
+                    </div>
+
+                    <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+                    <div class="row">
+                      <div class="col-6 col-md-4 column"></div>
+                      <div class="col-6 col-md-4 column"></div>
+                      <div class="col-6 col-md-4 column"></div>
+                    </div>
+
+                    <!-- Columns are always 50% wide, on mobile and desktop -->
+                    <div class="row">
+                      <div class="col-6 column"></div>
+                      <div class="col-6 column"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="lyrow ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">
+                    <input value="No gutters" type="text">
+                  </div>
+                  <div class="view">
+                    <div class="row no-gutters">
+                      <div class="col-12 col-sm-6 col-md-8 column"></div>
+                      <div class="col-6 col-md-4 column"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="lyrow ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">
+                    <input value="Push and Pull" type="text">
+                  </div>
+                  <div class="view">
+                    <div class="row">
+                      <div class="col-md-9 push-md-3 column"></div>
+                      <div class="col-md-3 pull-md-9 column"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="lyrow ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">
+                    <input value="Nesting" type="text">
+                  </div>
+                  <div class="view">
+                    <div class="row">
+                      <div class="col-sm-9 column">
+
+                        <div class="row">
+                          <div class="col-8 col-sm-6 column">
+
+                          </div>
+                          <div class="col-4 col-sm-6 column">
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            {{#if gridDisplayed}}
+            <ul class="nav nav-list accordion-group" style="overflow: scroll;">
+              <li class="nav-header">
+                <i class="icon-plus icon-white"></i> BASE CSS
+                <div class="pull-right popover-info">
+                  <i class="icon-question-sign "></i>
+                  <div class="popover fade right">
+                    <div class="arrow"></div>
+                    <h3 class="popover-title">Help</h3>
+                    <div class="popover-content">DRAG & DROP THE ELEMENTS INSIDE THE COLUMNS WHERE YOU WANT TO INSERT
+                      IT. AND FROM THERE, YOU CAN CONFIGURE THE STYLE OF THAT ELEMENT. IF YOU NEED MORE INFO PLEASE
+                      VISIT <a target="_blank" href="http://twitter.github.io/bootstrap/base-css.html">BASE CSS.</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li style="display: none;" class="boxes" id="elmBase">
+
+                <div class="box box-element ui-draggable">
+                  <a href="#close" class="remove label label-important">
+                    <i class="icon-remove icon-white"></i>Remove
+                  </a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <span class="configuration">
+                    <button type="button" class="btn btn-mini" data-target="#editorModal" role="button"
+                      data-toggle="modal">Editor</button>
+                    <span class="btn-group">
+                      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">Bullets </a>
+                      <ul class="dropdown-menu">
+                        <li class="active"><a href="#" rel="">Default</a></li>
+                        <li class=""><a href="#" rel="list-unstyled">list-unstyled</a></li>
+                        <li class=""><a href="#" rel="list-arrows">list-rrows</a></li>
+                        <li class=""><a href="#" rel="list-arrows small">.list-arrows.small</a></li>
+                      </ul>
+                    </span>
+                    <a class="btn btn-mini" href="#" rel="list-inline">Inline</a>
+                  </span>
+                  <div class="preview">Unordered List</div>
+                  <div class="view">
+                    <ul contenteditable="true">
+                      <li>Lorem ipsum dolor sit amet</li>
+                      <li>Consectetur adipiscing elit</li>
+                      <li>Integer molestie lorem at massa</li>
+                      <li>Facilisis in pretium nisl aliquet</li>
+                      <li>Nulla volutpat aliquam velit</li>
+                      <li>Faucibus porta lacus fringilla vel</li>
+                      <li>Aenean sit amet erat nunc</li>
+                      <li>Eget porttitor lorem</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="box box-element ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span> <span class="configuration"><button
+                      type="button" class="btn btn-mini" data-target="#editorModal" role="button"
+                      data-toggle="modal">Editor</button> <a class="btn btn-mini" href="#"
+                      rel="list-unstyled">Unstyled</a>
+                    <a class="btn btn-mini" href="#" rel="list-inline">Inline</a>
+                  </span>
+                  <div class="preview">Ordered List</div>
+                  <div class="view">
+                    <ol contenteditable="true">
+                      <li>Lorem ipsum dolor sit amet</li>
+                      <li>Consectetur adipiscing elit</li>
+                      <li>Integer molestie lorem at massa</li>
+                      <li>Facilisis in pretium nisl aliquet</li>
+                      <li>Nulla volutpat aliquam velit</li>
+                      <li>Faucibus porta lacus fringilla vel</li>
+                      <li>Aenean sit amet erat nunc</li>
+                      <li>Eget porttitor lorem</li>
+                    </ol>
+                  </div>
+                </div>
+
+              </li>
+            </ul>
+
+
+
+            <ul class="nav nav-list accordion-group" style="overflow: scroll;">
+              <li class="nav-header">
+                <i class="icon-plus icon-white"></i> FORMS
+
+                <div class="pull-right popover-info">
+                  <i class="icon-question-sign "></i>
+                  <div class="popover fade right">
+                    <div class="arrow"></div>
+                    <h3 class="popover-title">Help</h3>
+                    <div class="popover-content">DRAG &amp; DROP THE ELEMENTS INSIDE THE COLUMNS WHERE YOU WANT TO
+                      INSERT IT. IF YOU NEED MORE INFO PLEASE VISIT <a target="_blank"
+                        href="http://getbootstrap.com/css/#forms">FORM.</a></div>
+                  </div>
+                </div>
+              </li>
+              <li style="display: none;" class="boxes" id="elmComponents">
+
+                <!-- Horizontal Form -->
+
+                <!--LABEL-->
+
+                <!--INPUT-->
+
+                <div class="box box-element ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">Input</div>
+                  <div class="view">
+                    <input type="text" class='form-control' onChange />
+                  </div>
+                </div>
+                <!--Password Input-->
+                <div class="box box-element ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">Password input</div>
+                  <div class="view">
+                    <input type="password" class='form-control' placeholder="insert your password here" />
+                  </div>
+                </div>
+
+                <!--Email Input-->
+                <div class="box box-element ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">Email input</div>
+                  <div class="view">
+                    <input type="email" class='form-control' placeholder="type your email here" />
+                  </div>
+                </div>
+                <!--Text Area-->
+                <div class="box box-element ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">Text Area</div>
+                  <div class="view">
+                    <textarea class='form-control'>Default text </textarea>
+                  </div>
+                </div>
+
+                <!--Basic  Select-->
+
+                <div class="box box-element ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <span class="configuration">
+                    <button type="button" class="btn btn-mini" data-target="#editorModal" role="button"
+                      data-toggle="modal">Editor</button>
+                    <span class="btn-group">
+                      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">Styles </a>
+                      <ul class="dropdown-menu">
+                        <li class="active"><a href="#" rel="">Default</a></li>
+                        <li class=""><a href="#" rel="badge-success">Success</a></li>
+                        <li class=""><a href="#" rel="badge-warning">Warning</a></li>
+                        <li class=""><a href="#" rel="badge-important">Important</a></li>
+                        <li class=""><a href="#" rel="badge-info">Info</a></li>
+                        <li class=""><a href="#" rel="badge-inverse">Inverse</a></li>
+                      </ul>
+                    </span>
+                  </span>
+                  <div class="preview">Basic Select</div>
+                  <div class="view">
+                    <select id="selectbasic" name="selectbasic" class="form-control">
+                      {this.state.<stateVariableName>_State.map((data) => {
+                        return <option value={data.title}>{data.title}</option>;
+                        })}
+                    </select>
+                  </div>
+                </div>
+
+
+                <!--File  Button-->
+                <div class="box box-element ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <div class="preview">File Button</div>
+                  <div class="view">
+                    <label class="input-file">
+                      <input id="filebutton" name="filebutton" class="input-file" type="file">
+                      <span class="input-file-control"></span>
+                    </label>
+                  </div>
+                </div>
+
+                <!--BUTTON-->
+
+                <div class="box box-element ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <span class="configuration">
+                    <span class="btn-group">
+                      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">Styles </a>
+                      <ul class="dropdown-menu">
+                        <li class="active"><a href="#" rel="">Default</a></li>
+                        <li class=""><a href="#" rel="btn-primary">Primary</a></li>
+                        <li class=""><a href="#" rel="btn-info">Info</a></li>
+                        <li class=""><a href="#" rel="btn-success">Success</a></li>
+                        <li class=""><a href="#" rel="btn-warning">Warning</a></li>
+                        <li class=""><a href="#" rel="btn-danger">Danger</a></li>
+                        <li class=""><a href="#" rel="btn-inverse">Inverse</a></li>
+                        <li class=""><a href="#" rel="btn-link">Link</a></li>
+                      </ul>
+                    </span>
+                    <span class="btn-group">
+                      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">Size </a>
+                      <ul class="dropdown-menu">
+                        <li class=""><a href="#" rel="btn-large">Large</a></li>
+                        <li class="active"><a href="#" rel="">Default</a></li>
+                        <li class=""><a href="#" rel="btn-small">Small</a></li>
+                        <li class=""><a href="#" rel="btn-mini">Mini</a></li>
+                      </ul>
+                    </span>
+                    <a class="btn btn-mini" href="#" rel="btn-block">Block</a> <a class="btn btn-mini" href="#"
+                      rel="disabled">Disabled</a>
+                  </span>
+                  <div class="preview">Button</div>
+                  <div class="view">
+                    <button class="btn" type="button" contenteditable="true">Button</button>
+                  </div>
+                </div>
+
+
+
+              </li>
+            </ul>
+
+            <!-------------->
+            <!--COMPONENTS-->
+            <!-------------->
+
+            <ul class="nav nav-list accordion-group" style="overflow: scroll;">
+              <li class="nav-header">
+                <i class="icon-plus icon-white"></i> COMPONENTS
+                <div class="pull-right popover-info">
+                  <i class="icon-question-sign "></i>
+                  <div class="popover fade right">
+                    <div class="arrow"></div>
+                    <h3 class="popover-title">Help</h3>
+                    <div class="popover-content">DRAG &amp; DROP THE ELEMENTS INSIDE THE COLUMNS WHERE YOU WANT TO
+                      INSERT IT. AND FROM THERE, YOU CAN CONFIGURE THE STYLE OF THAT COMPONENT. IF YOU NEED MORE INFO
+                      PLEASE VISIT <a target="_blank"
+                        href="http://twitter.github.io/bootstrap/components.html">COMPONENTS.</a></div>
+                  </div>
+                </div>
+              </li>
+              <li style="display: none;" class="boxes" id="elmComponents">
+
+                <div class="box box-element ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <span class="configuration">
+                    <button type="button" class="btn btn-mini" data-target="#editorModal" role="button"
+                      data-toggle="modal">Editor</button>
+                    <span class="btn-group">
+                      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">Types</a>
+                      <ul class="dropdown-menu">
+                        <li class="active"><a href="#" rel="">Default</a></li>
+                        <li class=""><a href="#" rel="card-block">Block</a></li>
+                      </ul>
+                    </span>
+                    <span class="btn-group">
+                      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">Align</a>
+                      <ul class="dropdown-menu">
+                        <li class=""><a href="#" rel="text-left">Left</a></li>
+                        <li class=""><a href="#" rel="text-center">Center</a></li>
+                        <li class=""><a href="#" rel="text-right">Right</a></li>
+                      </ul>
+                    </span>
+                    <span class="btn-group">
+                      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">Image </a>
+                      <ul class="dropdown-menu">
+                        <li class=""><a href="#" rel="img-fluid">Responsive</a></li>
+                        <li class=""><a href="#" rel="rounded">Rounded</a></li>
+                        <li class=""><a href="#" rel="rounded-circle">Circle</a></li>
+                      </ul>
+                    </span>
+                  </span>
+                  <div class="preview">Card</div>
+                  <div class="view">
+                    <div class="card" style="max-width: 20rem;">
+                      <div class="card-header">
+                        {Card_Header}
+                      </div>
+                      <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180"
+                        style="height: 180px; width: 100%; display: block;" src={Card_Image}
+                        data-holder-rendered="true">
+                      <div class="card-block">
+                        <h4 class="card-title">{Card_title}</h4>
+                        <h6 class="card-subtitle text-muted">{Card_subtitle}</h6>
+                        <p class="card-text">{Card_Description}</p>
+                      </div>
+                      <div class="card-footer text-muted">
+                        {Card_Footer}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+                <!--Table-->
+
+                <div class="box box-element ui-draggable">
+                  <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <span class="configuration">
+                    <button type="button" class="btn btn-mini" data-target="#editorModal" role="button"
+                      data-toggle="modal">Editor</button>
+                    <span class="btn-group">
+                      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">Style </a>
+                      <ul class="dropdown-menu">
+                        <li class="active"><a href="#" rel="">Default</a></li>
+                        <li class=""><a href="#" rel="table-striped">Striped</a></li>
+                        <li class=""><a href="#" rel="table-bordered">Bordered</a></li>
+                        <li class=""><a href="#" rel="table-inverse">Inverse</a></li>
+                      </ul>
+                    </span>
+                    <a class="btn btn-mini" href="#" rel="table-hover">Hover</a> <a class="btn btn-mini" href="#"
+                      rel="table-sm">Condensed</a>
+                  </span>
+                  <div class="preview">Table</div>
+                  <div class="view">
+                    <table class="table" contenteditable="true">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Product</th>
+                          <th>Payment Taken</th>
+                          <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>TB - Monthly</td>
+                          <td>01/04/2012</td>
+                          <td>Default</td>
+                        </tr>
+                        <tr class="table-success">
+                          <td>1</td>
+                          <td>TB - Monthly</td>
+                          <td>01/04/2012</td>
+                          <td>Approved</td>
+                        </tr>
+                        <tr class="table-error">
+                          <td>2</td>
+                          <td>TB - Monthly</td>
+                          <td>02/04/2012</td>
+                          <td>Declined</td>
+                        </tr>
+                        <tr class="table-warning">
+                          <td>3</td>
+                          <td>TB - Monthly</td>
+                          <td>03/04/2012</td>
+                          <td>Pending</td>
+                        </tr>
+                        <tr class="bg-info">
+                          <td>4</td>
+                          <td>TB - Monthly</td>
+                          <td>04/04/2012</td>
+                          <td>Call in to confirm</td>
+                        </tr>
+                        <tr class="bg-success">
+                          <td>1</td>
+                          <td>TB - Monthly</td>
+                          <td>01/04/2012</td>
+                          <td>Approved</td>
+                        </tr>
+                        <tr class="bg-error">
+                          <td>2</td>
+                          <td>TB - Monthly</td>
+                          <td>02/04/2012</td>
+                          <td>Declined</td>
+                        </tr>
+                        <tr class="bg-warning">
+                          <td>3</td>
+                          <td>TB - Monthly</td>
+                          <td>03/04/2012</td>
+                          <td>Pending</td>
+                        </tr>
+                        <tr class="bg-info">
+                          <td>4</td>
+                          <td>TB - Monthly</td>
+                          <td>04/04/2012</td>
+                          <td>Call in to confirm</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+              </li>
+            </ul>
+
+            <ul class="nav nav-list accordion-group" style="overflow: scroll;">
+              <li class="nav-header">
+                <i class="icon-plus icon-white"></i> JAVASCRIPT
+                <div class="pull-right popover-info">
+                  <i class="icon-question-sign "></i>
+                  <div class="popover fade right">
+                    <div class="arrow"></div>
+                    <h3 class="popover-title">Help</h3>
+                    <div class="popover-content">DRAG & DROP THE ELEMENTS INSIDE THE COLUMNS WHERE YOU WANT TO INSERT
+                      IT. AND FROM THERE, YOU CAN CONFIGURE THE STYLE OF THAT JAVASCRIPT. IF YOU NEED MORE INFO PLEASE
+                      VISIT <a target="_blank" href="http://twitter.github.io/bootstrap/javascript.html">JAVASCRIPT.</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li style="display: none;" class="boxes mute" id="elmJS">
+
+              </li>
+            </ul>
+
+            {{/if}}
+          </div>
+        </div>
+        <!--/span-->
+        <div class="demo ui-sortable" id="containerProgressBar" style="min-height: 304px;">
+
+        </div>
+        <!-- end demo -->
+        <!--/span-->
+        <div id="download-layout">
+          <div class="container-fluid">
+          </div>
+        </div>
+      </div>
+      <!--/row-->
+    </div>
+    <!--/.fluid-container-->
+    <div class="modal fade" id="editorModal" tabindex="-1" role="dialog" aria-labelledby="editorModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Save your Layout</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <textarea id="contenteditor"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button id="savecontent" type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+            <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--[REQUEST]> <![endif]-->
+    <div class="modal bd-example-modal-xl" id="exampleModalScrollable" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" style="max-width: 70%;">
+      <div class="modal-dialog modal-dialog modal-xl modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div id="modelBodyTree1" class="modal-body">
+            <div id="tree1" style="width: 1000px; height: 500px; overflow-y: scroll;"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal" id="SkipButtonForRequest">SKIP!</button>
+            <button type="button" class="btn btn-success" data-dismiss="modal" id="NextButtonForRequest">NEXT>></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--[RESPONSE]> <![endif]-->
+    <div class="modal bd-example-modal-xl" id="exampleModalScrollable1" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" style="max-width: 70%;">
+      <div class="modal-dialog modal-dialog modal-xl modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalScrollableTitle1">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div id="modelBodyTree2" class="modal-body">
+            <div id="tree2" style="width: 1000px; height: 500px; overflow-y: scroll;"></div>
+          </div>
+          <div class="modal-footer">
+            <!--button type="button" class="btn btn-success" data-dismiss="modal">FINISH</button-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Save your Layout</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">x
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Choose how to save your layout</p>
+            <div class="btn-group">
+              <button type="button" id="fluidPage" class="active btn btn-info"><i
+                  class="icon-fullscreen icon-white"></i> Fluid Page</button>
+              <button type="button" class="btn btn-info" id="fixedPage"><i class="icon-screenshot icon-white"></i> Fixed
+                page</button>
+            </div>
+            <br>
+            <br>
+            <p>
+              <textarea></textarea>
+            </p>
+            <div class="modal-footer">
+              <button id="savecontent" type="button" class="btn btn-primary" data-dismiss="modal"
+                onclick="javascript:saveHtml();">Save</button>
+              <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
+      <script type="text/javascript" src="js/jquery.multi-select.js"></script>
+      <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
+      <script type="text/javascript" src="/js/jsonTreeWithLoad.js"></script>
+
+
+      <!--[if lt IE 9]>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+      <script type="text/javascript" src="js/bootstrap6.js"></script>
+      <script type="text/javascript" src="js/jquery-ui.js"></script>
+      <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+      <script type="text/javascript" src="js/jquery.xpath.js"></script>
+      <script type="text/javascript" src="js/jquery.htmlClean.js"></script>
+      <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+      <script type="text/javascript" src="ckeditor/config.js"></script>
+      <script type="text/javascript" src="js/scripts.js"></script>
+      <script type="text/javascript" src="js/FileSaver.js"></script>
+      <script type="text/javascript" src="js/blob.js"></script>
+      <script src="js/docs.min.js"></script>
+
+      <script>
+        function resizeCanvas(size) {
+
+          var containerID = document.getElementsByClassName("changeDimension");
+          var containerDownload = document.getElementById("download-layout").getElementsByClassName("container-fluid")[0];
+          var row = document.getElementsByClassName("demo ui-sortable");
+          var container1 = document.getElementsByClassName("container1");
+          if (size == "md") {
+            $(containerID).width('id', "MD");
+            $(row).attr('id', "MD");
+            $(container1).attr('id', "MD");
+            $(containerDownload).attr('id', "MD");
+          }
+          if (size == "lg") {
+            $(containerID).attr('id', "LG");
+            $(row).attr('id', "LG");
+            $(container1).attr('id', "LG");
+            $(containerDownload).attr('id', "LG");
+          }
+          if (size == "sm") {
+            $(containerID).attr('id', "SM");
+            $(row).attr('id', "SM");
+            $(container1).attr('id', "SM");
+            $(containerDownload).attr('id', "SM");
+          }
+          if (size == "xs") {
+            $(containerID).attr('id', "XS");
+            $(row).attr('id', "XS");
+            $(container1).attr('id', "XS");
+            $(containerDownload).attr('id', "XS");
+
+          }
+
+
+        }
+        $('#intermediate-checkbox').prop('indeterminate', true)
+      </script>
+      <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js"></script>
+
+      <script>
+        $(document).ready(function () {
+          $('#columnName').multiSelect();
+          $('[data-toggle="tooltip"]').tooltip();
+
+        });
+      </script>
+      <script>
+      </script>
+      <script src="/js/vex/vex.combined.js"></script>
+      <script>vex.defaultOptions.className = 'vex-theme-wireframe'</script>
+
+</body>
+
+</html>
