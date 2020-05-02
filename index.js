@@ -514,6 +514,7 @@ app.post("/manipulateState", async (req, res) => {
     __dirname + "\\public\\reactStarter\\client\\src\\actions\\allActions.js";
   var stateVariableNode;
   var responseStateVariableNode;
+  var stateVariabledataType;
   var sampleValueForStateVariable;
   var localResponse = res;
   localRequest = req;
@@ -550,6 +551,7 @@ app.post("/manipulateState", async (req, res) => {
 
     console.log(nodes[0].value.nodes);
     if (nodes[0].value.nodes == "string") {
+      stateVariabledataType = "string";
       stateVariableNode = stateVariableName + ":" + "''";
       responseStateVariableNode = stateVariableName + "_State" + ":" + "''";
       sampleValueForStateVariable = selectedNodeValue[0];
@@ -562,16 +564,19 @@ app.post("/manipulateState", async (req, res) => {
     } else if (nodes[0].value.nodes == "object") {
       if (nodes[0].value.keys[0] == "0") {
         //ARRAY TYPE
+        stateVariabledataType = "array";
         stateVariableNode = stateVariableName + ":" + "[]";
         responseStateVariableNode = stateVariableName + "_State" + ":" + "[]";
         sampleValueForStateVariable = selectedNodeValue[0][0];
       } else if (nodes[0].value.keys[0] != "0") {
         //JSON OBJECT TYPE
+        stateVariabledataType = "object";
         stateVariableNode = stateVariableName + ":" + "{}";
         responseStateVariableNode = stateVariableName + "_State" + ":" + "{}";
         sampleValueForStateVariable = selectedNodeValue[0];
       }
     } else if (nodes[0].value.nodes == "number") {
+      stateVariabledataType = "number";
       stateVariableNode = stateVariableName + ": 0";
       responseStateVariableNode = stateVariableName + "_State" + ": 0";
       sampleValueForStateVariable = selectedNodeValue[0];
@@ -581,6 +586,7 @@ app.post("/manipulateState", async (req, res) => {
     console.log(responseStateVariableNode);
     console.log(sampleValueForStateVariable);
   }
+
   //DATA INITIALIZATION SECTION FOR CODE GENERATION
   var actionMethod = "actionFunctionFor_" + apiName;
   var typeName = "typeFor_" + apiName;
@@ -636,143 +642,180 @@ app.post("/manipulateState", async (req, res) => {
   var typesFileReader = new LineByLineReader(typesFile);
   var reducerFileReader = new LineByLineReader(reducerFile);
   var actionsFileReader = new LineByLineReader(actionsFile);*/
-  if (jsonType == "request") {
-    //ADDITIONS IN THE COMPONENT FILE [REQUEST]
-    insertRequiredLine(
-      componentFile,
-      actionMethod + ",",
-      "//ADD_NEW_ACTION_FUNCTIONS_FROM_HERE_IMPORT",
-      "//END_OF_ADD_NEW_ACTION_FUNCTIONS_FROM_HERE_IMPORT",
-      ""
-    ).then(function () {
+  console.log(jsonType);
+  console.log(stateVariableName);
+  console.log(stateVariabledataType);
+  console.log(apiName);
+  console.log(sampleValueForStateVariable);
+  console.log(stateVariableNode);
+  fetch({
+    query:
+      "mutation addNewStateVariable($StateVariableName:String, $StateVariableType:String, $StateVariableDataType:String, $apiName:String, $sampleValueForStateVariable:String, $stateVariableNode:String){addNewStateVariable(StateVariableName:$StateVariableName, StateVariableType:$StateVariableType, StateVariableDataType:$StateVariableDataType, apiName:$apiName, sampleValueForStateVariable:$sampleValueForStateVariable,stateVariableNode:$stateVariableNode){StateVariableName StateVariableType StateVariableDataType apiName sampleValueForStateVariable stateVariableNode}}",
+    variables: {
+      StateVariableName:
+        jsonType == "response"
+          ? stateVariableName + "_State"
+          : stateVariableName,
+      StateVariableType: jsonType,
+      StateVariableDataType: stateVariabledataType,
+      apiName: apiName,
+      sampleValueForStateVariable: JSON.stringify(sampleValueForStateVariable),
+      stateVariableNode: stateVariableNode,
+    },
+  }).then((res) => {
+    console.log(res);
+    if (jsonType == "request") {
+      //StateVariableName==stateVariableName
+      //StateVariableType==request
+      //StateVariableDataType==stateVariabledataType
+      //apiName==apiName
+      //sampleValueForStateVariable==sampleValueForStateVariable
+      //stateVariableNode=stateVariableNode
+      //ADDITIONS IN THE COMPONENT FILE [REQUEST]
+
       insertRequiredLine(
         componentFile,
         actionMethod + ",",
-        "//ADD_NEW_ACTION_FUNCTIONS_FROM_HERE_ACTION_FUNCTION",
-        "//END_OF_ADD_NEW_ACTION_FUNCTIONS_FROM_HERE_ACTION_FUNCTION",
+        "//ADD_NEW_ACTION_FUNCTIONS_FROM_HERE_IMPORT",
+        "//END_OF_ADD_NEW_ACTION_FUNCTIONS_FROM_HERE_IMPORT",
         ""
-      ).then(function () {
-        if (SelectedNodePath !== "null") {
-          insertRequiredLine(
-            componentFile,
-            stateVariableNode + ",",
-            "//ADD_NEW_REQUEST_STATE_VARIABLE_FROM_HERE",
-            "//END_OF_ADD_NEW_REQUEST_STATE_VARIABLE_FROM_HERE",
-            ""
-          ).then(function () {
-            insertRequiredLine(
-              componentFile,
-              "this.props." +
-                actionMethod +
-                "(this.state." +
-                stateVariableName +
-                ")" +
-                ";",
-              "//ADD_NEW_ACTION_METHODS_FOR_COMPONENTDIDMOUNT",
-              "//END_OF_ADD_NEW_ACTION_METHODS_FOR_COMPONENTDIDMOUNT",
-              ""
-            );
-          });
-        } else if (SelectedNodePath === "null") {
-          insertRequiredLine(
-            componentFile,
-            "this.props." + actionMethod + "()" + ";",
-            "//ADD_NEW_ACTION_METHODS_FOR_COMPONENTDIDMOUNT",
-            "//END_OF_ADD_NEW_ACTION_METHODS_FOR_COMPONENTDIDMOUNT",
-            ""
-          );
-        }
-      });
-    });
-
-    //TYPES FILE
-    insertRequiredLine(
-      typesFile,
-      typeNameExport + ";",
-      "//ADD_NEW_TYPES_FROM_HERE",
-      "//END_OF_ADD_NEW_TYPES_FROM_HERE",
-      typeName
-    ).then(function () {
-      //ACTIONS FILE
-      insertRequiredLine(
-        actionsFile,
-        importForActionFile + "",
-        "//ADD_NEW_IMPORTS_FOR_ACTIONS_FROM_HERE",
-        "//END_OF_ADD_NEW_IMPORTS_FOR_ACTIONS_FROM_HERE",
-        typeName
       ).then(function () {
         insertRequiredLine(
-          actionsFile,
-          actionFunctionImplementation,
-          "//ADD_NEW_ACTIONS_FROM_HERE",
-          "//END_OF_ADD_NEW_ACTIONS_FROM_HERE",
+          componentFile,
+          actionMethod + ",",
+          "//ADD_NEW_ACTION_FUNCTIONS_FROM_HERE_ACTION_FUNCTION",
+          "//END_OF_ADD_NEW_ACTION_FUNCTIONS_FROM_HERE_ACTION_FUNCTION",
           ""
-        );
-      });
-    });
-  } else if (jsonType == "response") {
-    //REDUCER
-    insertRequiredLine(
-      reducerFile,
-      importForReducerFile,
-      "//ADD_NEW_IMPORTS_FOR_REDUCER_FROM_HERE",
-      "//END_OF_ADD_NEW_IMPORTS_FOR_REDUCER_FROM_HERE",
-      typeName
-    ).then(function () {
-      insertRequiredLine(
-        reducerFile,
-        reducerCase,
-        "//ADD_NEW_CASES_FROM_HERE",
-        "//END_OF_ADD_NEW_CASES_FROM_HERE",
-        ""
-      )
-        .then(function () {
-          insertRequiredLine(
-            reducerFile,
-            stateVariableNode + ",",
-            "//ADD_NEW_RESPONSE_STATE_FROM_HERE",
-            "//END_OF_ADD_NEW_RESPONSE_STATE_FROM_HERE",
-            ""
-          );
-        })
-        .then(function () {
-          insertRequiredLine(
-            componentFile,
-            stateVariableName + ",",
-            "//ADD_NEW_RESPONSE_STATE_VARIABLE_HERE",
-            "//END_OF_ADD_NEW_RESPONSE_STATE_VARIABLE_HERE",
-            ""
-          ).then(function () {
+        ).then(function () {
+          if (SelectedNodePath !== "null") {
             insertRequiredLine(
               componentFile,
-              mapStateToPropsVariable + ",",
-              "//ADD_NEW_RESPONSE_STATE_VARIABLE_HERE_FOR_MAP_STATE_TO_PROPS",
-              "//END_OF_ADD_NEW_RESPONSE_STATE_VARIABLE_HERE_FOR_MAP_STATE_TO_PROPS",
+              stateVariableNode + ",",
+              "//ADD_NEW_REQUEST_STATE_VARIABLE_FROM_HERE",
+              "//END_OF_ADD_NEW_REQUEST_STATE_VARIABLE_FROM_HERE",
               ""
             ).then(function () {
               insertRequiredLine(
                 componentFile,
-                responseStateVariableNode + ",",
-                "//ADD_NEW_PROPS_STATE_VARIABLE_FROM_HERE",
-                "//END_OF_ADD_NEW_PROPS_STATE_VARIABLE_FROM_HERE",
+                "this.props." +
+                  actionMethod +
+                  "(this.state." +
+                  stateVariableName +
+                  ")" +
+                  ";",
+                "//ADD_NEW_ACTION_METHODS_FOR_COMPONENTDIDMOUNT",
+                "//END_OF_ADD_NEW_ACTION_METHODS_FOR_COMPONENTDIDMOUNT",
+                ""
+              );
+            });
+          } else if (SelectedNodePath === "null") {
+            insertRequiredLine(
+              componentFile,
+              "this.props." + actionMethod + "()" + ";",
+              "//ADD_NEW_ACTION_METHODS_FOR_COMPONENTDIDMOUNT",
+              "//END_OF_ADD_NEW_ACTION_METHODS_FOR_COMPONENTDIDMOUNT",
+              ""
+            );
+          }
+        });
+      });
+
+      //TYPES FILE
+      insertRequiredLine(
+        typesFile,
+        typeNameExport + ";",
+        "//ADD_NEW_TYPES_FROM_HERE",
+        "//END_OF_ADD_NEW_TYPES_FROM_HERE",
+        typeName
+      ).then(function () {
+        //ACTIONS FILE
+        insertRequiredLine(
+          actionsFile,
+          importForActionFile + "",
+          "//ADD_NEW_IMPORTS_FOR_ACTIONS_FROM_HERE",
+          "//END_OF_ADD_NEW_IMPORTS_FOR_ACTIONS_FROM_HERE",
+          typeName
+        ).then(function () {
+          insertRequiredLine(
+            actionsFile,
+            actionFunctionImplementation,
+            "//ADD_NEW_ACTIONS_FROM_HERE",
+            "//END_OF_ADD_NEW_ACTIONS_FROM_HERE",
+            ""
+          );
+        });
+      });
+    } else if (jsonType == "response") {
+      //StateVariableName==stateVariableName+ "_State"
+      //StateVariableType==response
+      //StateVariableDataType==stateVariabledataType
+      //apiName==apiName
+      //sampleValueForStateVariable==sampleValueForStateVariable
+      //stateVariableNode=stateVariableNode
+
+      //REDUCER
+      insertRequiredLine(
+        reducerFile,
+        importForReducerFile,
+        "//ADD_NEW_IMPORTS_FOR_REDUCER_FROM_HERE",
+        "//END_OF_ADD_NEW_IMPORTS_FOR_REDUCER_FROM_HERE",
+        typeName
+      ).then(function () {
+        insertRequiredLine(
+          reducerFile,
+          reducerCase,
+          "//ADD_NEW_CASES_FROM_HERE",
+          "//END_OF_ADD_NEW_CASES_FROM_HERE",
+          ""
+        )
+          .then(function () {
+            insertRequiredLine(
+              reducerFile,
+              stateVariableNode + ",",
+              "//ADD_NEW_RESPONSE_STATE_FROM_HERE",
+              "//END_OF_ADD_NEW_RESPONSE_STATE_FROM_HERE",
+              ""
+            );
+          })
+          .then(function () {
+            insertRequiredLine(
+              componentFile,
+              stateVariableName + ",",
+              "//ADD_NEW_RESPONSE_STATE_VARIABLE_HERE",
+              "//END_OF_ADD_NEW_RESPONSE_STATE_VARIABLE_HERE",
+              ""
+            ).then(function () {
+              insertRequiredLine(
+                componentFile,
+                mapStateToPropsVariable + ",",
+                "//ADD_NEW_RESPONSE_STATE_VARIABLE_HERE_FOR_MAP_STATE_TO_PROPS",
+                "//END_OF_ADD_NEW_RESPONSE_STATE_VARIABLE_HERE_FOR_MAP_STATE_TO_PROPS",
                 ""
               ).then(function () {
                 insertRequiredLine(
                   componentFile,
-                  updateOfPropsCode + ";",
-                  "//UPDATE_OF_PROPS",
-                  "//END_OF_UPDATE_OF_PROPS",
+                  responseStateVariableNode + ",",
+                  "//ADD_NEW_PROPS_STATE_VARIABLE_FROM_HERE",
+                  "//END_OF_ADD_NEW_PROPS_STATE_VARIABLE_FROM_HERE",
                   ""
-                );
+                ).then(function () {
+                  insertRequiredLine(
+                    componentFile,
+                    updateOfPropsCode + ";",
+                    "//UPDATE_OF_PROPS",
+                    "//END_OF_UPDATE_OF_PROPS",
+                    ""
+                  );
+                });
               });
             });
           });
-        });
-    });
+      });
 
-    //COMPONENT FILE
-  }
-  res.send(stateVariableNode);
+      //COMPONENT FILE
+    }
+    localResponse.send(stateVariableNode);
+  });
 });
 
 app.listen(port, function () {
@@ -825,6 +868,6 @@ function insertRequiredLine(
         }
       );
       resolve();
-    }, 1000);
+    }, 100);
   });
 }

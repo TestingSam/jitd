@@ -3,7 +3,7 @@ import { POST_SOMETHING_TO_POST_REQUEST } from "./types";
 //ADD_NEW_IMPORTS_FOR_ACTIONS_FROM_HERE
 
 import { typeFor_GetCovidStates } from "./types";
-import { typeFor_GetCountriesForCovid } from "./types";
+import { typeFor_GetLatestNews } from "./types";
 //END_OF_ADD_NEW_IMPORTS_FOR_ACTIONS_FROM_HERE
 import axios from "axios";
 
@@ -27,60 +27,6 @@ export const postToPOSTRequest = (valueReceived) => async (dispatch) => {
 
 //ADD_NEW_ACTIONS_FROM_HERE
 
-export const actionFunctionFor_GetCovidStates = (valueGot) => async (
-  dispatch
-) => {
-  var myHeaders = new Headers();
-  myHeaders.append("x-rapidapi-host", "covid-193.p.rapidapi.com");
-  myHeaders.append(
-    "x-rapidapi-key",
-    "dd44d0a755msh52836eccd71549bp127125jsn8a184ed28c8d"
-  );
-  var raw;
-  var requestOptions = {
-    method: "GET",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow",
-  };
-  var result = await fetch(
-    "https://covid-193.p.rapidapi.com/statistics?country=USA",
-    requestOptions
-  )
-    .then((response) => response.json())
-    .then((result) => {
-      console.log(result);
-      return result;
-    })
-    .catch((error) => console.log("error", error));
-  dispatch({ type: typeFor_GetCovidStates, payload: result });
-};
-export const actionFunctionFor_GetCountriesForCovid = (valueGot) => async (
-  dispatch
-) => {
-  var myHeaders = new Headers();
-  myHeaders.append("x-rapidapi-host", "covid-193.p.rapidapi.com");
-  myHeaders.append(
-    "x-rapidapi-key",
-    "dd44d0a755msh52836eccd71549bp127125jsn8a184ed28c8d"
-  );
-  var raw;
-  var requestOptions = {
-    method: "GET",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow",
-  };
-  var result = await fetch(
-    "https://covid-193.p.rapidapi.com/countries",
-    requestOptions
-  )
-    .then((response) => response.json())
-    .then((result) => {
-      console.log(result);
-      return result;
-    })
-    .catch((error) => console.log("error", error));
-  dispatch({ type: typeFor_GetCountriesForCovid, payload: result });
-};
+export const actionFunctionFor_GetCovidStates = (valueGot) => async (dispatch) => {var myHeaders = new Headers();myHeaders.append('x-rapidapi-host', 'covid-193.p.rapidapi.com');myHeaders.append('x-rapidapi-key', 'dd44d0a755msh52836eccd71549bp127125jsn8a184ed28c8d');var raw;var requestOptions = {   method: 'GET',   headers: myHeaders,   body: raw,   redirect: 'follow'};var result = await fetch('https://covid-193.p.rapidapi.com/statistics?country=USA', requestOptions)   .then(response => response.json())   .then(result => {console.log(result);return result})   .catch(error => console.log('error', error));dispatch({ type: typeFor_GetCovidStates, payload: result });};
+export const actionFunctionFor_GetLatestNews = (valueGot) => async (dispatch) => {var myHeaders = new Headers();myHeaders.append('Content-Type', 'application/json');var raw = JSON.stringify({'type':'filterArticles','queryString':'title:Covid19'});var requestOptions = {   method: 'POST',   headers: myHeaders,   body: raw,   redirect: 'follow'};var result = await fetch('https://api.newsfilter.io/public/actions?token=sti4ioroeaeiu972366rsyolszgdzxzvirhkg02jqjhelbinp9oisdfbafoauowe', requestOptions)   .then(response => response.json())   .then(result => {console.log(result);return result})   .catch(error => console.log('error', error));dispatch({ type: typeFor_GetLatestNews, payload: result });};
 //END_OF_ADD_NEW_ACTIONS_FROM_HERE

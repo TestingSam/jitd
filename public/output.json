@@ -10,21 +10,21 @@
 			{
 				"country": "USA",
 				"cases": {
-					"new": "+25409",
-					"active": 834261,
-					"critical": 15298,
-					"recovered": 142238,
-					"total": 1035765
+					"new": "+17971",
+					"active": 919497,
+					"critical": 16481,
+					"recovered": 162690,
+					"total": 1149001
 				},
 				"deaths": {
-					"new": "+2470",
-					"total": 59266
+					"new": "+1061",
+					"total": 66814
 				},
 				"tests": {
-					"total": 5919847
+					"total": 6851691
 				},
-				"day": "2020-04-29",
-				"time": "2020-04-29T08:00:11+00:00"
+				"day": "2020-05-02",
+				"time": "2020-05-02T19:15:04+00:00"
 			}
 		]
 	},
@@ -32,7 +32,7 @@
 		"get": "countries",
 		"parameters": [],
 		"errors": [],
-		"results": 217,
+		"results": 219,
 		"response": [
 			"Afghanistan",
 			"Albania",
@@ -78,6 +78,7 @@
 			"Chile",
 			"China",
 			"Colombia",
+			"Comoros",
 			"Congo",
 			"Costa-Rica",
 			"Croatia",
@@ -228,6 +229,7 @@
 			"Switzerland",
 			"Syria",
 			"Taiwan",
+			"Tajikistan",
 			"Tanzania",
 			"Thailand",
 			"Timor-Leste",
@@ -259,8 +261,255 @@
 			"country": "india"
 		},
 		"errors": [],
-		"results": 232,
+		"results": 245,
 		"response": [
+			{
+				"country": "India",
+				"cases": {
+					"new": "+519",
+					"active": 26546,
+					"critical": 0,
+					"recovered": 10007,
+					"total": 37776
+				},
+				"deaths": {
+					"new": null,
+					"total": 1223
+				},
+				"tests": {
+					"total": 976363
+				},
+				"day": "2020-05-02",
+				"time": "2020-05-02T19:15:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+79",
+					"active": 26106,
+					"critical": 0,
+					"recovered": 10007,
+					"total": 37336
+				},
+				"deaths": {
+					"new": null,
+					"total": 1223
+				},
+				"tests": {
+					"total": 976363
+				},
+				"day": "2020-05-02",
+				"time": "2020-05-02T15:45:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+79",
+					"active": 26106,
+					"critical": 0,
+					"recovered": 10007,
+					"total": 37336
+				},
+				"deaths": {
+					"new": null,
+					"total": 1223
+				},
+				"tests": {
+					"total": 902654
+				},
+				"day": "2020-05-02",
+				"time": "2020-05-02T04:00:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+2394",
+					"active": 26027,
+					"critical": 0,
+					"recovered": 10007,
+					"total": 37257
+				},
+				"deaths": {
+					"new": "+69",
+					"total": 1223
+				},
+				"tests": {
+					"total": 902654
+				},
+				"day": "2020-05-02",
+				"time": "2020-05-02T03:30:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+180",
+					"active": 24821,
+					"critical": 0,
+					"recovered": 9068,
+					"total": 35043
+				},
+				"deaths": {
+					"new": null,
+					"total": 1154
+				},
+				"tests": {
+					"total": 902654
+				},
+				"day": "2020-05-01",
+				"time": "2020-05-01T19:15:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+1801",
+					"active": 24641,
+					"critical": 0,
+					"recovered": 9068,
+					"total": 34863
+				},
+				"deaths": {
+					"new": "+75",
+					"total": 1154
+				},
+				"tests": {
+					"total": 830201
+				},
+				"day": "2020-05-01",
+				"time": "2020-05-01T04:00:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+1800",
+					"active": 24640,
+					"critical": 0,
+					"recovered": 9068,
+					"total": 34862
+				},
+				"deaths": {
+					"new": "+75",
+					"total": 1154
+				},
+				"tests": {
+					"total": 830201
+				},
+				"day": "2020-05-01",
+				"time": "2020-05-01T00:00:06+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+1718",
+					"active": 24561,
+					"critical": 0,
+					"recovered": 9068,
+					"total": 34780
+				},
+				"deaths": {
+					"new": "+72",
+					"total": 1151
+				},
+				"tests": {
+					"total": 830201
+				},
+				"day": "2020-04-30",
+				"time": "2020-04-30T19:15:06+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+548",
+					"active": 24094,
+					"critical": 0,
+					"recovered": 8437,
+					"total": 33610
+				},
+				"deaths": {
+					"new": null,
+					"total": 1079
+				},
+				"tests": {
+					"total": 830201
+				},
+				"day": "2020-04-30",
+				"time": "2020-04-30T17:15:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": null,
+					"active": 23546,
+					"critical": 0,
+					"recovered": 8437,
+					"total": 33062
+				},
+				"deaths": {
+					"new": null,
+					"total": 1079
+				},
+				"tests": {
+					"total": 830201
+				},
+				"day": "2020-04-30",
+				"time": "2020-04-30T12:45:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+1738",
+					"active": 23546,
+					"critical": 0,
+					"recovered": 8437,
+					"total": 33062
+				},
+				"deaths": {
+					"new": "+71",
+					"total": 1079
+				},
+				"tests": {
+					"total": 770764
+				},
+				"day": "2020-04-30",
+				"time": "2020-04-30T04:00:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+463",
+					"active": 22983,
+					"critical": 0,
+					"recovered": 7796,
+					"total": 31787
+				},
+				"deaths": {
+					"new": null,
+					"total": 1008
+				},
+				"tests": {
+					"total": 770764
+				},
+				"day": "2020-04-29",
+				"time": "2020-04-29T19:45:14+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+8",
+					"active": 22528,
+					"critical": 0,
+					"recovered": 7796,
+					"total": 31332
+				},
+				"deaths": {
+					"new": null,
+					"total": 1008
+				},
+				"tests": {
+					"total": 770764
+				},
+				"day": "2020-04-29",
+				"time": "2020-04-29T13:45:11+00:00"
+			},
 			{
 				"country": "India",
 				"cases": {
@@ -278,7 +527,7 @@
 					"total": 770764
 				},
 				"day": "2020-04-29",
-				"time": "2020-04-29T08:00:11+00:00"
+				"time": "2020-04-29T13:30:10+00:00"
 			},
 			{
 				"country": "India",
@@ -4673,7 +4922,7 @@
 	},
 	{
 		"total": {
-			"value": 20,
+			"value": 24,
 			"relation": "eq"
 		},
 		"from": 0,
@@ -4686,6 +4935,78 @@
 			}
 		],
 		"articles": [
+			{
+				"source": {
+					"id": "prNewswire",
+					"name": "PR Newswire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Service-Disabled Veteran Owned Small Business (\"SDVOSB\") medical logistics company brings FDA EUA COVID19 test to North America.",
+				"content": "",
+				"description": "Trax Management Services Inc. announced today the introduction of the PhoenixDx 2019-nCoV to North America, a COVID-19 test kit that recently...",
+				"url": "https://newsfilter.io/articles/service-disabled-veteran-owned-small-business-sdvosb-medical-logistics-company-brings-fda-eua-covid1-615638f5197851e1ca34e7c0822c7c85",
+				"imageUrl": "",
+				"publishedAt": "2020-05-01T09:00:00-04:00",
+				"id": "615638f5197851e1ca34e7c0822c7c85",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "prNewswire",
+					"name": "PR Newswire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Obsidian Therapeutics Develops and Shares Safe Workplace Productivity Solution in Response to COVID19",
+				"content": "",
+				"description": "Obsidian Therapeutics, a biotechnology company pioneering controllable cell and gene therapies, today announced it will share the architecture and...",
+				"url": "https://newsfilter.io/articles/obsidian-therapeutics-develops-and-shares-safe-workplace-productivity-solution-in-response-to-covid1-af9f4f5bab3fa00146e747d18efa6a41",
+				"imageUrl": "",
+				"publishedAt": "2020-05-01T07:00:00-04:00",
+				"id": "af9f4f5bab3fa00146e747d18efa6a41",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "globenewswire",
+					"name": "GlobeNewswire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "We Clean COVID19 Decontaminates Homes & Businesses Amidst Pandemic",
+				"content": "",
+				"description": "Attention: News, Environment, Business, Health, Wellness, Lifestyle, Real Estate, and Food & Beverage TORONTO, April 30, 2020 (GLOBE NEWSWIRE) -- As more and more Ontarians are afflicted...",
+				"url": "https://newsfilter.io/articles/we-clean-covid19-decontaminates-homes--businesses-amidst-pandemic-df1b4a085bb5f5e69e3f82d3b109f713",
+				"imageUrl": "",
+				"publishedAt": "2020-04-30T10:52:08-04:00",
+				"id": "df1b4a085bb5f5e69e3f82d3b109f713",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "prNewswire",
+					"name": "PR Newswire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Telehealth & COVID19: Once Patients Have Become Accustomed to Telehealth, They Will Continue to Make Use of Its Services Even After the Pandemic",
+				"content": "",
+				"description": "ResearchAndMarkets.com published a new article on the telehealth industry, \"Increased Demand for Telehealth due to COVID-19 Social-Distancing\" Prior...",
+				"url": "https://newsfilter.io/articles/telehealth--covid19-once-patients-have-become-accustomed-to-telehealth-they-will-continue-to-make-us-7068d459a6c638c1a755e00495a3ee30",
+				"imageUrl": "",
+				"publishedAt": "2020-04-30T10:15:00-04:00",
+				"id": "7068d459a6c638c1a755e00495a3ee30",
+				"industries": [],
+				"sectors": []
+			},
 			{
 				"source": {
 					"id": "globenewswire",

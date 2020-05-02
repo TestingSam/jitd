@@ -533,10 +533,38 @@ $(document).ready(function () {
         .hide();*/
       var thislement = $(this);
       var element2 = thislement.attr("class").replace(/\s/g, ".");
+      var element1 = $(t.toElement).attr("class").replace(/\s/g, ".");
       var tagName = thislement.children().last().children().prop("tagName");
+      var className = thislement.children().last().children().prop("class");
       console.log(tagName);
+      console.log(className);
       uiBlock = $("#BlockNameMentionedHere").text();
       uiBlock = uiBlock.toString().trim();
+      //DROPED ELEMENT ON THE DOM
+      var droppedElementWithEnclosedDiv = $("#containerProgressBar").find(
+        "." + element2
+      );
+      if (className.length != 0) {
+        var droppedElement = $("#containerProgressBar").find(
+          "." + element2 + " " + tagName + "[class=" + className + "]"
+        );
+      } else if (className.length == 0) {
+        var droppedElement = $("#containerProgressBar").find(
+          "." + element2 + " " + tagName
+        );
+      }
+      if (droppedElement.length == 2) {
+        droppedElement = droppedElement.last();
+      } else if (droppedElement.length > 2) {
+        droppedElement = droppedElement.first();
+      }
+      console.log(droppedElement);
+      if (className == "form-control" && tagName !== "SELECT") {
+      }
+      if (className == "form-control" && tagName === "SELECT") {
+        alert("Select Logic");
+        alert(tagName);
+      }
       //Associate_HTML_WITH_API(t, uiBlock, thislement);
       /*console.log("DEVELOPER LAYOUT");
       console.log($(".demo.ui-sortable").html());

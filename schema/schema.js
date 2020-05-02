@@ -10,6 +10,7 @@ const AppSchemaContentSchema = require("../model/AppSchemaContents");
 const AvailableColumnSchema = require("../model/AvailableColumns");
 const ApiSchemaCollectionSchema = require("../model/ApiSchemaCollection");
 const ReduxSchema = require("../model/reduxSchema");
+const StateVariableSchema = require("../model/StateVariables");
 
 const {
   GraphQLObjectType,
@@ -32,6 +33,19 @@ const ComponentNameType = new GraphQLObjectType({
     isGridPresent: { type: GraphQLString },
     developerLayout: { type: GraphQLString },
     actualLayout: { type: GraphQLString },
+  }),
+});
+
+const StateVariableSchemaType = new GraphQLObjectType({
+  name: "stateVariablescollection",
+  description: "stateVariables collection...",
+  fields: () => ({
+    StateVariableName: { type: GraphQLString },
+    StateVariableType: { type: GraphQLString },
+    StateVariableDataType: { type: GraphQLString },
+    apiName: { type: GraphQLString },
+    sampleValueForStateVariable: { type: GraphQLString },
+    stateVariableNode: { type: GraphQLString },
   }),
 });
 
@@ -226,6 +240,33 @@ const Mutation = new GraphQLObjectType({
           });
 
           return newComponentName.save();
+        } else {
+          return "Enter User Name";
+        }
+      },
+    },
+    addNewStateVariable: {
+      type: StateVariableSchemaType,
+      args: {
+        StateVariableName: { type: GraphQLString },
+        StateVariableType: { type: GraphQLString },
+        StateVariableDataType: { type: GraphQLString },
+        apiName: { type: GraphQLString },
+        sampleValueForStateVariable: { type: GraphQLString },
+        stateVariableNode: { type: GraphQLString },
+      },
+      resolve(parent, args) {
+        if (args.StateVariableName != false) {
+          let newStateVariable = new StateVariableSchema({
+            StateVariableName: args.StateVariableName,
+            StateVariableType: args.StateVariableType,
+            StateVariableDataType: args.StateVariableDataType,
+            apiName: args.apiName,
+            sampleValueForStateVariable: args.sampleValueForStateVariable,
+            stateVariableNode: args.stateVariableNode,
+          });
+
+          return newStateVariable.save();
         } else {
           return "Enter User Name";
         }
