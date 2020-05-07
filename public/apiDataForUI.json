@@ -289,21 +289,21 @@
 				{
 					"country": "USA",
 					"cases": {
-						"new": "+17971",
-						"active": 919497,
-						"critical": 16481,
-						"recovered": 162690,
-						"total": 1149001
+						"new": "+132",
+						"active": 975306,
+						"critical": 15827,
+						"recovered": 213109,
+						"total": 1263224
 					},
 					"deaths": {
-						"new": "+1061",
-						"total": 66814
+						"new": "+10",
+						"total": 74809
 					},
 					"tests": {
-						"total": 6851691
+						"total": 8005589
 					},
-					"day": "2020-05-02",
-					"time": "2020-05-02T19:15:04+00:00"
+					"day": "2020-05-07",
+					"time": "2020-05-07T09:45:04+00:00"
 				}
 			]
 		}
@@ -805,12 +805,16 @@
 							"deaths": {
 								"type": "object",
 								"properties": {
-									"new": {},
+									"new": {
+										"type": "string",
+										"minLength": 1
+									},
 									"total": {
 										"type": "number"
 									}
 								},
 								"required": [
+									"new",
 									"total"
 								]
 							},
@@ -1004,8 +1008,502 @@
 				"country": "india"
 			},
 			"errors": [],
-			"results": 245,
+			"results": 271,
 			"response": [
+				{
+					"country": "India",
+					"cases": {
+						"new": "+58",
+						"active": 35927,
+						"critical": 0,
+						"recovered": 15331,
+						"total": 53045
+					},
+					"deaths": {
+						"new": "+2",
+						"total": 1787
+					},
+					"tests": {
+						"total": 1357413
+					},
+					"day": "2020-05-07",
+					"time": "2020-05-07T09:45:04+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+38",
+						"active": 35909,
+						"critical": 0,
+						"recovered": 15331,
+						"total": 53025
+					},
+					"deaths": {
+						"new": null,
+						"total": 1785
+					},
+					"tests": {
+						"total": 1357413
+					},
+					"day": "2020-05-07",
+					"time": "2020-05-07T05:45:04+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+38",
+						"active": 35909,
+						"critical": 0,
+						"recovered": 15331,
+						"total": 53025
+					},
+					"deaths": {
+						"new": null,
+						"total": 1785
+					},
+					"tests": {
+						"total": 1276781
+					},
+					"day": "2020-05-07",
+					"time": "2020-05-07T04:45:04+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+3587",
+						"active": 35871,
+						"critical": 0,
+						"recovered": 15331,
+						"total": 52987
+					},
+					"deaths": {
+						"new": "+92",
+						"total": 1785
+					},
+					"tests": {
+						"total": 1276781
+					},
+					"day": "2020-05-07",
+					"time": "2020-05-07T04:00:04+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+3159",
+						"active": 35517,
+						"critical": 0,
+						"recovered": 15257,
+						"total": 52559
+					},
+					"deaths": {
+						"new": "+92",
+						"total": 1785
+					},
+					"tests": {
+						"total": 1276781
+					},
+					"day": "2020-05-06",
+					"time": "2020-05-06T18:30:04+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+2940",
+						"active": 35661,
+						"critical": 0,
+						"recovered": 14911,
+						"total": 52340
+					},
+					"deaths": {
+						"new": "+75",
+						"total": 1768
+					},
+					"tests": {
+						"total": 1276781
+					},
+					"day": "2020-05-06",
+					"time": "2020-05-06T18:00:05+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+452",
+						"active": 33781,
+						"critical": 0,
+						"recovered": 14367,
+						"total": 49852
+					},
+					"deaths": {
+						"new": "+11",
+						"total": 1704
+					},
+					"tests": {
+						"total": 1276781
+					},
+					"day": "2020-05-06",
+					"time": "2020-05-06T16:00:03+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+36",
+						"active": 33558,
+						"critical": 0,
+						"recovered": 14183,
+						"total": 49436
+					},
+					"deaths": {
+						"new": "+2",
+						"total": 1695
+					},
+					"tests": {
+						"total": 1276781
+					},
+					"day": "2020-05-06",
+					"time": "2020-05-06T14:30:03+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": null,
+						"active": 33523,
+						"critical": 0,
+						"recovered": 14183,
+						"total": 49400
+					},
+					"deaths": {
+						"new": "+1",
+						"total": 1694
+					},
+					"tests": {
+						"total": 1276781
+					},
+					"day": "2020-05-06",
+					"time": "2020-05-06T04:45:03+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": null,
+						"active": 33523,
+						"critical": 0,
+						"recovered": 14183,
+						"total": 49400
+					},
+					"deaths": {
+						"new": "+1",
+						"total": 1694
+					},
+					"tests": {
+						"total": 1191946
+					},
+					"day": "2020-05-06",
+					"time": "2020-05-06T04:15:03+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+2963",
+						"active": 33565,
+						"critical": 0,
+						"recovered": 14142,
+						"total": 49400
+					},
+					"deaths": {
+						"new": "+127",
+						"total": 1693
+					},
+					"tests": {
+						"total": 1191946
+					},
+					"day": "2020-05-06",
+					"time": "2020-05-06T04:00:04+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+39",
+						"active": 32056,
+						"critical": 0,
+						"recovered": 12849,
+						"total": 46476
+					},
+					"deaths": {
+						"new": "+5",
+						"total": 1571
+					},
+					"tests": {
+						"total": 1191946
+					},
+					"day": "2020-05-05",
+					"time": "2020-05-05T18:30:04+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": null,
+						"active": 32024,
+						"critical": 0,
+						"recovered": 12847,
+						"total": 46437
+					},
+					"deaths": {
+						"new": null,
+						"total": 1566
+					},
+					"tests": {
+						"total": 1191946
+					},
+					"day": "2020-05-05",
+					"time": "2020-05-05T05:30:05+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+3932",
+						"active": 32024,
+						"critical": 0,
+						"recovered": 12847,
+						"total": 46437
+					},
+					"deaths": {
+						"new": "+175",
+						"total": 1566
+					},
+					"tests": {
+						"total": 1107233
+					},
+					"day": "2020-05-05",
+					"time": "2020-05-05T03:45:04+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+3932",
+						"active": 32029,
+						"critical": 0,
+						"recovered": 12842,
+						"total": 46437
+					},
+					"deaths": {
+						"new": "+175",
+						"total": 1566
+					},
+					"tests": {
+						"total": 1107233
+					},
+					"day": "2020-05-04",
+					"time": "2020-05-04T20:00:04+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+2365",
+						"active": 30926,
+						"critical": 0,
+						"recovered": 12492,
+						"total": 44870
+					},
+					"deaths": {
+						"new": "+61",
+						"total": 1452
+					},
+					"tests": {
+						"total": 1107233
+					},
+					"day": "2020-05-04",
+					"time": "2020-05-04T19:00:05+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+331",
+						"active": 29659,
+						"critical": 0,
+						"recovered": 11782,
+						"total": 42836
+					},
+					"deaths": {
+						"new": "+4",
+						"total": 1395
+					},
+					"tests": {
+						"total": 1107233
+					},
+					"day": "2020-05-04",
+					"time": "2020-05-04T17:30:04+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+165",
+						"active": 29493,
+						"critical": 0,
+						"recovered": 11782,
+						"total": 42670
+					},
+					"deaths": {
+						"new": "+4",
+						"total": 1395
+					},
+					"tests": {
+						"total": 1107233
+					},
+					"day": "2020-05-04",
+					"time": "2020-05-04T12:30:04+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+28",
+						"active": 29367,
+						"critical": 0,
+						"recovered": 11775,
+						"total": 42533
+					},
+					"deaths": {
+						"new": null,
+						"total": 1391
+					},
+					"tests": {
+						"total": 1107233
+					},
+					"day": "2020-05-04",
+					"time": "2020-05-04T06:00:04+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+28",
+						"active": 29367,
+						"critical": 0,
+						"recovered": 11775,
+						"total": 42533
+					},
+					"deaths": {
+						"new": null,
+						"total": 1391
+					},
+					"tests": {
+						"total": 1046450
+					},
+					"day": "2020-05-04",
+					"time": "2020-05-04T04:00:05+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+2806",
+						"active": 29339,
+						"critical": 0,
+						"recovered": 11775,
+						"total": 42505
+					},
+					"deaths": {
+						"new": "+68",
+						"total": 1391
+					},
+					"tests": {
+						"total": 1046450
+					},
+					"day": "2020-05-04",
+					"time": "2020-05-04T03:30:05+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+2791",
+						"active": 29324,
+						"critical": 0,
+						"recovered": 11775,
+						"total": 42490
+					},
+					"deaths": {
+						"new": "+68",
+						"total": 1391
+					},
+					"tests": {
+						"total": 1046450
+					},
+					"day": "2020-05-03",
+					"time": "2020-05-03T17:30:05+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+564",
+						"active": 28054,
+						"critical": 0,
+						"recovered": 10886,
+						"total": 40263
+					},
+					"deaths": {
+						"new": null,
+						"total": 1323
+					},
+					"tests": {
+						"total": 1046450
+					},
+					"day": "2020-05-03",
+					"time": "2020-05-03T16:30:05+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+281",
+						"active": 27838,
+						"critical": 0,
+						"recovered": 10819,
+						"total": 39980
+					},
+					"deaths": {
+						"new": null,
+						"total": 1323
+					},
+					"tests": {
+						"total": 1046450
+					},
+					"day": "2020-05-03",
+					"time": "2020-05-03T12:45:04+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+281",
+						"active": 27838,
+						"critical": 0,
+						"recovered": 10819,
+						"total": 39980
+					},
+					"deaths": {
+						"new": null,
+						"total": 1323
+					},
+					"tests": {
+						"total": 976363
+					},
+					"day": "2020-05-03",
+					"time": "2020-05-03T04:30:04+00:00"
+				},
+				{
+					"country": "India",
+					"cases": {
+						"new": "+2442",
+						"active": 27557,
+						"critical": 0,
+						"recovered": 10819,
+						"total": 39699
+					},
+					"deaths": {
+						"new": "+100",
+						"total": 1323
+					},
+					"tests": {
+						"total": 976363
+					},
+					"day": "2020-05-03",
+					"time": "2020-05-03T04:15:04+00:00"
+				},
 				{
 					"country": "India",
 					"cases": {

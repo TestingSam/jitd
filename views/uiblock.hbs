@@ -545,7 +545,7 @@
                   <div class="view">
                     <select id="selectbasic" name="selectbasic" class="form-control">
                       {this.state.<stateVariableName>_State.map((data) => {
-                        return <option value={data.title}>{data.title}</option>;
+                        return <option value={data.DropDownValue}>{data.DropDownText}</option>;
                         })}
                     </select>
                   </div>
@@ -658,7 +658,7 @@
                       </ul>
                     </span>
                   </span>
-                  <div class="preview">Card</div>
+                  <div class="preview">Single Card</div>
                   <div class="view">
                     <div class="card" style="max-width: 20rem;">
                       <div class="card-header">
@@ -681,9 +681,17 @@
 
                 <div class="box box-element ui-draggable">
                   <a href="#close" class="remove label label-important"><i class="icon-remove icon-white"></i>Remove</a>
-                  <span class="drag label"><i class="icon-move"></i>Drag</span> <span class="configuration"><button
-                      type="button" class="btn btn-mini" data-target="#editorModal" role="button"
+                  <span class="drag label"><i class="icon-move"></i>Drag</span>
+                  <span class="configuration">
+                    <button type="button" class="btn btn-mini" data-target="#editorModal" role="button"
                       data-toggle="modal">Editor</button>
+                    <span class="btn-group">
+                      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">Types</a>
+                      <ul class="dropdown-menu">
+                        <li class="active"><a href="#" rel="">Default</a></li>
+                        <li class=""><a href="#" rel="card-block">Block</a></li>
+                      </ul>
+                    </span>
                     <span class="btn-group">
                       <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">Align</a>
                       <ul class="dropdown-menu">
@@ -692,23 +700,33 @@
                         <li class=""><a href="#" rel="text-right">Right</a></li>
                       </ul>
                     </span>
+                    <span class="btn-group">
+                      <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">Image </a>
+                      <ul class="dropdown-menu">
+                        <li class=""><a href="#" rel="img-fluid">Responsive</a></li>
+                        <li class=""><a href="#" rel="rounded">Rounded</a></li>
+                        <li class=""><a href="#" rel="rounded-circle">Circle</a></li>
+                      </ul>
+                    </span>
                   </span>
-                  <div class="preview">Media Object</div>
+                  <div class="preview">Mutiple Card Tiles</div>
                   <div class="view">
-                    <div class="media">
-                      <img src="img/a_002.jpg" class="d-flex mr-3">
-                      <div class="media-body">
-                        <h5 class="mt-0">Media heading</h5>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
-                        Cras
-                        purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-                        vulputate fringilla. Donec lacinia congue felis in faucibus.
+                    {this.state.STATE_VARIABLE_TO_BE_PLACED.map((data) => {
+                    return (
+                    <div class="card">
+                      <div class="card-header">{data.Card_Header_For_MutipleCard}</div>
+                      <div class="card-body">
+                        <p class="card-text">{data.Card_Text_For_MutipleCard}</p>
+                        <a href={data.Card_Navigation_Link_For_MutipleCard} class="btn btn-primary">
+                          Open link
+                        </a>
                       </div>
+                      <hr />
                     </div>
+                    );
+                    })}
                   </div>
                 </div>
-
-
 
                 <!--Table-->
 

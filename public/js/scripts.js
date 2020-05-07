@@ -1,4 +1,5 @@
 var webpage = "";
+var replacedParameters = [];
 function supportstorage() {
   if (typeof window.localStorage == "object") return true;
   else return false;
@@ -386,10 +387,6 @@ function downloadLayoutSrcCustom() {
       ["aria-hidden"],
       ["data-slide-to"],
       ["data-slide"],
-      ["api_type"],
-      ["api_name"],
-      ["schema_name"],
-      ["custom_key"],
     ],
   });
   $("#download-layout").html(formatSrc);
@@ -521,7 +518,7 @@ $(document).ready(function () {
       startdrag = 1;
       /*console.log("HTML Tag 3...");
       console.log(t.helper.context.children[4]);*/
-      console.log(t.helper.context.children[4]);
+      //console.log(t.helper.context.children[4]);
     },
     drag: function (e, t) {
       t.helper.width(400);
@@ -559,6 +556,20 @@ $(document).ready(function () {
         droppedElement = droppedElement.first();
       }
       console.log(droppedElement);
+      //REPLACE LOGIC
+      droppedElement.html(function () {
+        return $(this).html().replace("Card_Header_For_MutipleCard", "title");
+      });
+      /*droppedElement.html(function () {
+        return $(this)
+          .html()
+          .replace("<PROPERTY TO BE REPLACED>", "<JSON NODE TO BE CHOSEN");
+      });*/
+      console.log(droppedElement.parent().html());
+      //START FROM HERE.....
+      var currentParametersForComponent = parametersForComponent(
+        droppedElement.parent().html()
+      );
       if (className == "form-control" && tagName !== "SELECT") {
       }
       if (className == "form-control" && tagName === "SELECT") {
@@ -566,10 +577,10 @@ $(document).ready(function () {
         alert(tagName);
       }
       //Associate_HTML_WITH_API(t, uiBlock, thislement);
-      /*console.log("DEVELOPER LAYOUT");
+      console.log("DEVELOPER LAYOUT");
       console.log($(".demo.ui-sortable").html());
       console.log("ACTUAL LAYOUT");
-      console.log(saveHtmlCustom());*/
+      console.log(saveHtmlCustom());
       if (stopsave > 0) stopsave--;
       startdrag = 0;
     },
@@ -1086,3 +1097,38 @@ $("#initComponent").click(function () {
     },
   });
 });
+
+var parametersForComponent = (htmlElement) => {
+  const regex = /{data./gm;
+  const str = htmlElement;
+  let m;
+
+  var indexesOfData = [];
+  var returnParameters = [];
+
+  while ((m = regex.exec(str)) !== null) {
+    // This is necessary to avoid infinite loops with zero-width matches
+    if (m.index === regex.lastIndex) {
+      regex.lastIndex++;
+    }
+
+    // The result can be accessed through the `m`-variable.
+    m.forEach((match, groupIndex) => {
+      //alert(`Found match, group ${groupIndex}: ${match}`);
+      //alert(m.index)
+      indexesOfData.push(m.index);
+    });
+  }
+  for (var i = 0; i < indexesOfData.length; i++) {
+    var extractedData = str.substring(indexesOfData[i]);
+
+    returnParameters.push(
+      extractedData
+        .split("}")[0]
+        .replace("{", "")
+        .replace("data", "")
+        .replace(".", "")
+    );
+  }
+  return returnParameters;
+};

@@ -3,5 +3,4 @@ export const POST_SOMETHING_TO_POST_REQUEST = "POST_SOMETHING_TO_POST_REQUEST";
 //ADD_NEW_TYPES_FROM_HERE
 
 export const typeFor_GetCovidStates = "typeFor_GetCovidStates";
-export const typeFor_GetLatestNews = "typeFor_GetLatestNews";
 //END_OF_ADD_NEW_TYPES_FROM_HERE
