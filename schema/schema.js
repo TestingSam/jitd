@@ -46,6 +46,7 @@ const StateVariableSchemaType = new GraphQLObjectType({
     apiName: { type: GraphQLString },
     sampleValueForStateVariable: { type: GraphQLString },
     stateVariableNode: { type: GraphQLString },
+    actionFunction: { type: GraphQLString },
   }),
 });
 
@@ -212,6 +213,24 @@ const RootQuery = new GraphQLObjectType({
         });
       },
     },
+    getResponseStateVariables: {
+      type: new GraphQLList(StateVariableSchemaType),
+      resolve(parent, args) {
+        return StateVariableSchema.find({ StateVariableType: "response" }).sort(
+          {
+            time: -1,
+          }
+        );
+      },
+    },
+    getRequestStateVariables: {
+      type: new GraphQLList(StateVariableSchemaType),
+      resolve(parent, args) {
+        return StateVariableSchema.find({ StateVariableType: "request" }).sort({
+          time: -1,
+        });
+      },
+    },
   },
 });
 
@@ -254,6 +273,7 @@ const Mutation = new GraphQLObjectType({
         apiName: { type: GraphQLString },
         sampleValueForStateVariable: { type: GraphQLString },
         stateVariableNode: { type: GraphQLString },
+        actionFunction: { type: GraphQLString },
       },
       resolve(parent, args) {
         if (args.StateVariableName != false) {
@@ -264,6 +284,7 @@ const Mutation = new GraphQLObjectType({
             apiName: args.apiName,
             sampleValueForStateVariable: args.sampleValueForStateVariable,
             stateVariableNode: args.stateVariableNode,
+            actionFunction: args.actionFunction,
           });
 
           return newStateVariable.save();

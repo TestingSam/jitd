@@ -8,6 +8,7 @@ const StateVariables = new MSchema({
   apiName: String,
   sampleValueForStateVariable: String,
   stateVariableNode: String,
+  actionFunction: String,
 });
 
 module.exports = mongoose.model("StateVariables", StateVariables);

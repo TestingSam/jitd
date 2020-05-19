@@ -112,10 +112,14 @@ app.get("/", (req, res) => {
 });
 
 app.post("/JSXGenerator", (req, res) => {
-  var htmlReceived = req.body.uiBlockName;
-  htmlReceived = JSON.parse(htmlReceived);
+  var jsxReceived = req.body.webpage;
+  var uiBlockName = req.body.uiBlockName;
+  uiBlockName = uiBlockName.trim();
+  uiBlockName = JSON.parse(uiBlockName);
+  uiBlockName = uiBlockName.trim();
+  jsxReceived = JSON.parse(jsxReceived);
   //console.log(htmlReceived);
-  const $ = cheerio.load(htmlReceived);
+  const $ = cheerio.load(jsxReceived);
   /*$('[custom_key="H3_81889"]').attr(
     "OnClick",
     "this.OnClickHandler.bind(this)"
@@ -124,8 +128,73 @@ app.post("/JSXGenerator", (req, res) => {
     //$(this).attr("OnClick", "this.OnClickHandler" + index + ".bind(this)");
     console.log($(this).attr("custom_key"));
   });
+  console.log("JSX GENERATOR..");
   console.log($("body").html());
-  res.send(200);
+  var htmlConsolidated = "";
+  for (var i = 0; i < $("body").html().split("\n").length; i++) {
+    htmlConsolidated =
+      htmlConsolidated + $("body").html().split("\n")[i].trim();
+  }
+  htmlConsolidated = htmlConsolidated.replace(/ </g, "<");
+  htmlConsolidated = htmlConsolidated.replace(/"/g, "'");
+  htmlConsolidated = htmlConsolidated.replace(/&gt;/g, ">");
+  htmlConsolidated = htmlConsolidated.replace("onchange", "onChange");
+  htmlConsolidated = htmlConsolidated.replace("onclick", "onClick");
+  console.log(htmlConsolidated);
+  insertRequiredLine(
+    "D:\\dreamproject\\AppGenerator\\public\\reactStarter\\client\\src\\BaseComponent.js",
+    htmlConsolidated,
+    "//START_OF_JSX",
+    "//END_OF_JSX",
+    ""
+  ).then(function () {
+    res.send(200);
+  });
+});
+
+app.post("/EventCodeGenerator", (req, res) => {
+  actionFunctionReceived = req.body.actionFunction;
+  stateVariableReceived = req.body.stateVariable;
+  actionFunctionReceived = JSON.parse(actionFunctionReceived);
+  stateVariableReceived = JSON.parse(stateVariableReceived);
+  eventFunction =
+    actionFunctionReceived +
+    "= (e) => {this.setState({ " +
+    stateVariableReceived +
+    ": e.target.value });};";
+  insertRequiredLine(
+    "D:\\dreamproject\\AppGenerator\\public\\reactStarter\\client\\src\\BaseComponent.js",
+    eventFunction,
+    "//START_OF_FORM_FUNCTION",
+    "//END_OF_FORM_FUNCTION",
+    ""
+  ).then(function () {
+    res.send(200);
+  });
+});
+
+app.post("/ButtonCodeGenerator", (req, res) => {
+  actionFunctionReceived = req.body.actionFunction;
+  actionFunctionToBeCalledReceived = req.body.actionFunctionToBeCalled;
+  actionFunctionReceived = JSON.parse(actionFunctionReceived);
+  actionFunctionToBeCalledReceived = JSON.parse(
+    actionFunctionToBeCalledReceived
+  );
+
+  buttonFunction =
+    actionFunctionReceived +
+    "= () => {" +
+    actionFunctionToBeCalledReceived +
+    "};";
+  insertRequiredLine(
+    "D:\\dreamproject\\AppGenerator\\public\\reactStarter\\client\\src\\BaseComponent.js",
+    buttonFunction,
+    "//START_OF_FORM_FUNCTION",
+    "//END_OF_FORM_FUNCTION",
+    ""
+  ).then(function () {
+    res.send(200);
+  });
 });
 
 app.post("/getPresenceOfComponent", (req, res) => {
@@ -204,6 +273,28 @@ app.post("/getColumns", (req, res) => {
     query: "query{getColumns{columnName}}",
   }).then((res) => {
     localResponse.send(res.data.getColumns);
+  });
+});
+
+app.post("/getStateVariableNames", (req, res) => {
+  var localResponse = res;
+  localRequest = req;
+  fetch({
+    query:
+      "query getResponseStateVariables{getResponseStateVariables{StateVariableName sampleValueForStateVariable stateVariableNode apiName}}",
+  }).then((res) => {
+    localResponse.send(res.data);
+  });
+});
+
+app.post("/getRequestStateVariableNames", (req, res) => {
+  var localResponse = res;
+  localRequest = req;
+  fetch({
+    query:
+      "query getRequestStateVariables{getRequestStateVariables{StateVariableName sampleValueForStateVariable stateVariableNode apiName actionFunction}}",
+  }).then((res) => {
+    localResponse.send(res.data);
   });
 });
 
@@ -650,7 +741,7 @@ app.post("/manipulateState", async (req, res) => {
   console.log(stateVariableNode);
   fetch({
     query:
-      "mutation addNewStateVariable($StateVariableName:String, $StateVariableType:String, $StateVariableDataType:String, $apiName:String, $sampleValueForStateVariable:String, $stateVariableNode:String){addNewStateVariable(StateVariableName:$StateVariableName, StateVariableType:$StateVariableType, StateVariableDataType:$StateVariableDataType, apiName:$apiName, sampleValueForStateVariable:$sampleValueForStateVariable,stateVariableNode:$stateVariableNode){StateVariableName StateVariableType StateVariableDataType apiName sampleValueForStateVariable stateVariableNode}}",
+      "mutation addNewStateVariable($StateVariableName:String, $StateVariableType:String, $StateVariableDataType:String, $apiName:String, $sampleValueForStateVariable:String, $stateVariableNode:String, $actionFunction:String){addNewStateVariable(StateVariableName:$StateVariableName, StateVariableType:$StateVariableType, StateVariableDataType:$StateVariableDataType, apiName:$apiName, sampleValueForStateVariable:$sampleValueForStateVariable,stateVariableNode:$stateVariableNode, actionFunction:$actionFunction){StateVariableName StateVariableType StateVariableDataType apiName sampleValueForStateVariable stateVariableNode actionFunction}}",
     variables: {
       StateVariableName:
         jsonType == "response"
@@ -661,6 +752,12 @@ app.post("/manipulateState", async (req, res) => {
       apiName: apiName,
       sampleValueForStateVariable: JSON.stringify(sampleValueForStateVariable),
       stateVariableNode: stateVariableNode,
+      actionFunction:
+        "this.props." +
+        actionMethod +
+        "(this.state." +
+        stateVariableName +
+        ");",
     },
   }).then((res) => {
     console.log(res);

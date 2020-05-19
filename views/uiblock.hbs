@@ -94,7 +94,7 @@
             </button>
             <button type="button" class="btn btn-primary navbar-btn" data-target="#downloadModal"
               rel="/build/downloadModal" role="button" data-toggle="modal">
-              <i class="fa icon-chevron-down"></i>Download
+              <i class="fa icon-chevron-down"></i>Export JSX
             </button>
           </div>
         </li>
@@ -489,7 +489,7 @@
                   <span class="drag label"><i class="icon-move"></i>Drag</span>
                   <div class="preview">Input</div>
                   <div class="view">
-                    <input type="text" class='form-control' onChange />
+                    <input type="text" class='form-control' onChange></input>
                   </div>
                 </div>
                 <!--Password Input-->
@@ -498,7 +498,7 @@
                   <span class="drag label"><i class="icon-move"></i>Drag</span>
                   <div class="preview">Password input</div>
                   <div class="view">
-                    <input type="password" class='form-control' placeholder="insert your password here" />
+                    <input type="password" class='form-control' placeholder="insert your password here"></input>
                   </div>
                 </div>
 
@@ -721,7 +721,7 @@
                           Open link
                         </a>
                       </div>
-                      <hr />
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </div>
                     );
                     })}
@@ -920,113 +920,162 @@
         </div>
       </div>
     </div>
-    <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModalLabel"
-      aria-hidden="true">
+    <!--[NODE SELECTION FROM STATE VARIABLE]> <![endif]-->
+    <div class="modal bd-example-modal-xl" id="exampleModalScrollable2" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalScrollableTitle" aria-hidden="true" style="max-width: 80%;">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Save your Layout</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">x
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            <p>Choose how to save your layout</p>
-            <div class="btn-group">
-              <button type="button" id="fluidPage" class="active btn btn-info"><i
-                  class="icon-fullscreen icon-white"></i> Fluid Page</button>
-              <button type="button" class="btn btn-info" id="fixedPage"><i class="icon-screenshot icon-white"></i> Fixed
-                page</button>
+          <div id="modelBodyTree3" class="modal-body">
+            <div style="width: 700px; height: 300px; overflow-y: scroll;">
+              <div class="list-group" id="elementParameters">
+              </div>
             </div>
-            <br>
-            <br>
-            <p>
-              <textarea></textarea>
-            </p>
-            <div class="modal-footer">
-              <button id="savecontent" type="button" class="btn btn-primary" data-dismiss="modal"
-                onclick="javascript:saveHtml();">Save</button>
-              <button type="button" class="btn" data-dismiss="modal">Cancel</button>
-            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" id="updatedDroppedElement"
+              data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
+    </div>
 
-      <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
-      <script type="text/javascript" src="js/jquery.multi-select.js"></script>
-      <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
-      <script type="text/javascript" src="/js/jsonTreeWithLoad.js"></script>
+    <!--[SAMPLE VALUE FOR STATE VARIABLE]> <![endif]-->
+    <div class="modal bd-example-modal-xl" id="SampleNodeForStateVariable" tabindex="-1" role="dialog"
+      aria-labelledby="SampleNodeForStateVariable" aria-hidden="true" style="max-width: 80%;">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel4">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div id="modelBodyTree4" class="modal-body">
+            <div id="tree4" style="width: 700px; height: 300px; overflow-y: scroll;">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <span id="selectedNodeElementHidden" style="visibility: hidden;">Samir</span>
+
+  <div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Save your Layout</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">x
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Choose how to save your layout</p>
+          <div class="btn-group">
+            <button type="button" id="fluidPage" class="active btn btn-info"><i class="icon-fullscreen icon-white"></i>
+              Fluid Page</button>
+            <button type="button" class="btn btn-info" id="fixedPage"><i class="icon-screenshot icon-white"></i> Fixed
+              page</button>
+          </div>
+          <br>
+          <br>
+          <p>
+            <textarea></textarea>
+          </p>
+          <div class="modal-footer">
+            <button id="savecontent" type="button" class="btn btn-primary" data-dismiss="modal"
+              onclick="javascript:saveHtml();">Export</button>
+            <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.multi-select.js"></script>
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
+    <script type="text/javascript" src="/js/jsonTreeWithLoad.js"></script>
 
 
-      <!--[if lt IE 9]>
+    <!--[if lt IE 9]>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
-        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
-        crossorigin="anonymous"></script>
-      <script type="text/javascript" src="js/bootstrap6.js"></script>
-      <script type="text/javascript" src="js/jquery-ui.js"></script>
-      <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
-      <script type="text/javascript" src="js/jquery.xpath.js"></script>
-      <script type="text/javascript" src="js/jquery.htmlClean.js"></script>
-      <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
-      <script type="text/javascript" src="ckeditor/config.js"></script>
-      <script type="text/javascript" src="js/scripts.js"></script>
-      <script type="text/javascript" src="js/FileSaver.js"></script>
-      <script type="text/javascript" src="js/blob.js"></script>
-      <script src="js/docs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+      integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/bootstrap6.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="js/jquery.xpath.js"></script>
+    <script type="text/javascript" src="js/jquery.htmlClean.js"></script>
+    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="ckeditor/config.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/FileSaver.js"></script>
+    <script type="text/javascript" src="js/blob.js"></script>
+    <script src="js/docs.min.js"></script>
 
-      <script>
-        function resizeCanvas(size) {
+    <script>
+      function resizeCanvas(size) {
 
-          var containerID = document.getElementsByClassName("changeDimension");
-          var containerDownload = document.getElementById("download-layout").getElementsByClassName("container-fluid")[0];
-          var row = document.getElementsByClassName("demo ui-sortable");
-          var container1 = document.getElementsByClassName("container1");
-          if (size == "md") {
-            $(containerID).width('id', "MD");
-            $(row).attr('id', "MD");
-            $(container1).attr('id', "MD");
-            $(containerDownload).attr('id', "MD");
-          }
-          if (size == "lg") {
-            $(containerID).attr('id', "LG");
-            $(row).attr('id', "LG");
-            $(container1).attr('id', "LG");
-            $(containerDownload).attr('id', "LG");
-          }
-          if (size == "sm") {
-            $(containerID).attr('id', "SM");
-            $(row).attr('id', "SM");
-            $(container1).attr('id', "SM");
-            $(containerDownload).attr('id', "SM");
-          }
-          if (size == "xs") {
-            $(containerID).attr('id', "XS");
-            $(row).attr('id', "XS");
-            $(container1).attr('id', "XS");
-            $(containerDownload).attr('id', "XS");
-
-          }
-
+        var containerID = document.getElementsByClassName("changeDimension");
+        var containerDownload = document.getElementById("download-layout").getElementsByClassName("container-fluid")[0];
+        var row = document.getElementsByClassName("demo ui-sortable");
+        var container1 = document.getElementsByClassName("container1");
+        if (size == "md") {
+          $(containerID).width('id', "MD");
+          $(row).attr('id', "MD");
+          $(container1).attr('id', "MD");
+          $(containerDownload).attr('id', "MD");
+        }
+        if (size == "lg") {
+          $(containerID).attr('id', "LG");
+          $(row).attr('id', "LG");
+          $(container1).attr('id', "LG");
+          $(containerDownload).attr('id', "LG");
+        }
+        if (size == "sm") {
+          $(containerID).attr('id', "SM");
+          $(row).attr('id', "SM");
+          $(container1).attr('id', "SM");
+          $(containerDownload).attr('id', "SM");
+        }
+        if (size == "xs") {
+          $(containerID).attr('id', "XS");
+          $(row).attr('id', "XS");
+          $(container1).attr('id', "XS");
+          $(containerDownload).attr('id', "XS");
 
         }
-        $('#intermediate-checkbox').prop('indeterminate', true)
-      </script>
-      <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js"></script>
 
-      <script>
-        $(document).ready(function () {
-          $('#columnName').multiSelect();
-          $('[data-toggle="tooltip"]').tooltip();
 
-        });
-      </script>
-      <script>
-      </script>
-      <script src="/js/vex/vex.combined.js"></script>
-      <script>vex.defaultOptions.className = 'vex-theme-wireframe'</script>
+      }
+      $('#intermediate-checkbox').prop('indeterminate', true)
+    </script>
+    <script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js"></script>
 
+    <script>
+      $(document).ready(function () {
+        $('#columnName').multiSelect();
+        $('[data-toggle="tooltip"]').tooltip();
+
+      });
+    </script>
+    <script>
+    </script>
+    <script src="/js/vex/vex.combined.js"></script>
+    <script>vex.defaultOptions.className = 'vex-theme-wireframe'</script>
 </body>
 
 </html>

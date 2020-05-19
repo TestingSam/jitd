@@ -5,7 +5,7 @@
  * Copyright 2017 Vera Lobacheva (http://iamvera.com)
  * Released under the MIT license (LICENSE.txt)
  */
-
+var SelectedTempdata;
 var jsonTree = (function () {
   /* ---------- Utilities ---------- */
   var utils = {
@@ -261,57 +261,71 @@ var jsonTree = (function () {
             .querySelector("#selectedElement")
             .setAttribute("selectedNode", self.getJSONPath(true));
           var SelectedNodePath = self.getJSONPath(true);
-          var apiName = $("#exampleModalScrollableTitle").text();
-          var customKey = $("#exampleModalScrollableTitle").attr("element_Key");
-          $.ajax({
-            url: "http://127.0.0.1:5000/GetAPIData",
-            type: "POST",
-            data: {
-              apiName: JSON.stringify(apiName),
-            },
-            success: function (results) {
-              var SourceJson;
-              var codeSnippet;
-              var jsonType;
-              if ($("#exampleModalScrollableTitle").is(":visible")) {
-                SourceJson = JSON.parse(results.request);
-                jsonType = "request";
-              } else if ($("#exampleModalScrollableTitle1").is(":visible")) {
-                SourceJson = JSON.parse(results.response);
-                jsonType = "response";
-              }
-              codeSnippet = results.codeSnippet;
-              bootbox.prompt("Enter State Variable Name", function (
-                stateVariableName
-              ) {
-                console.log(SourceJson);
-                console.log(SelectedNodePath);
-                console.log(apiName + "_" + stateVariableName);
-                console.log(customKey);
-                console.log(codeSnippet);
-                $.ajax({
-                  url: "http://127.0.0.1:5000/manipulateState",
-                  type: "POST",
-                  data: {
-                    customKey: JSON.stringify(customKey),
-                    SourceJson: JSON.stringify(SourceJson),
-                    SelectedNodePath: JSON.stringify(SelectedNodePath),
-                    stateVariableName: JSON.stringify(
-                      apiName + "_" + stateVariableName
-                    ),
-                    codeSnippet: JSON.stringify(codeSnippet),
-                    jsonType: jsonType,
-                  },
-                  success: function (manipulateState_Results) {
-                    console.log(JSON.stringify(manipulateState_Results));
-                    if ($("#exampleModalScrollableTitle1").is(":visible")) {
-                      $("#exampleModalScrollable1").modal("hide");
-                    }
-                  },
+          if ($("#SampleNodeForStateVariable").is(":visible")) {
+            //SELECTED NODE LOGIC
+            SelectedTempdata =
+              SelectedTempdata +
+              ";" +
+              $("#exampleModalLabel4").text() +
+              ":" +
+              SelectedNodePath;
+            $("#selectedNodeElementHidden").text(SelectedTempdata);
+          } else {
+            var apiName = $("#exampleModalScrollableTitle").text();
+            var customKey = $("#exampleModalScrollableTitle").attr(
+              "element_Key"
+            );
+            $.ajax({
+              url: "http://127.0.0.1:5000/GetAPIData",
+              type: "POST",
+              data: {
+                apiName: JSON.stringify(apiName),
+              },
+              success: function (results) {
+                var SourceJson;
+                var codeSnippet;
+                var jsonType;
+                if ($("#exampleModalScrollableTitle").is(":visible")) {
+                  SourceJson = JSON.parse(results.request);
+                  jsonType = "request";
+                } else if ($("#exampleModalScrollableTitle1").is(":visible")) {
+                  SourceJson = JSON.parse(results.response);
+                  jsonType = "response";
+                }
+                codeSnippet = results.codeSnippet;
+                bootbox.prompt("Enter State Variable Name", function (
+                  stateVariableName
+                ) {
+                  console.log(SourceJson);
+                  console.log(SelectedNodePath);
+                  console.log(apiName + "_" + stateVariableName);
+                  console.log(customKey);
+                  console.log(codeSnippet);
+                  $.ajax({
+                    url: "http://127.0.0.1:5000/manipulateState",
+                    type: "POST",
+                    data: {
+                      customKey: JSON.stringify(customKey),
+                      SourceJson: JSON.stringify(SourceJson),
+                      SelectedNodePath: JSON.stringify(SelectedNodePath),
+                      stateVariableName: JSON.stringify(
+                        apiName + "_" + stateVariableName
+                      ),
+                      codeSnippet: JSON.stringify(codeSnippet),
+                      jsonType: jsonType,
+                    },
+                    success: function (manipulateState_Results) {
+                      console.log(JSON.stringify(manipulateState_Results));
+                      if ($("#exampleModalScrollableTitle1").is(":visible")) {
+                        $("#exampleModalScrollable1").modal("hide");
+                      }
+                    },
+                  });
                 });
-              });
-            },
-          });
+              },
+            });
+          }
+
           return;
         }
       },
@@ -563,59 +577,73 @@ var jsonTree = (function () {
               .querySelector("#selectedElement")
               .setAttribute("selectedNode", self.getJSONPath(true));
             var SelectedNodePath = self.getJSONPath(true);
-            var apiName = $("#exampleModalScrollableTitle").text();
-            var customKey = $("#exampleModalScrollableTitle").attr(
-              "element_Key"
-            );
-            $.ajax({
-              url: "http://127.0.0.1:5000/GetAPIData",
-              type: "POST",
-              data: {
-                apiName: JSON.stringify(apiName),
-              },
-              success: function (results) {
-                var SourceJson;
-                var codeSnippet;
-                var jsonType;
-                if ($("#exampleModalScrollableTitle").is(":visible")) {
-                  SourceJson = JSON.parse(results.request);
-                  jsonType = "request";
-                } else if ($("#exampleModalScrollableTitle1").is(":visible")) {
-                  SourceJson = JSON.parse(results.response);
-                  jsonType = "response";
-                }
-                codeSnippet = results.codeSnippet;
-                bootbox.prompt("Enter State Variable Name", function (
-                  stateVariableName
-                ) {
-                  console.log(SourceJson);
-                  console.log(SelectedNodePath);
-                  console.log(apiName + "_" + stateVariableName);
-                  console.log(customKey);
-                  console.log(codeSnippet);
-                  $.ajax({
-                    url: "http://127.0.0.1:5000/manipulateState",
-                    type: "POST",
-                    data: {
-                      customKey: JSON.stringify(customKey),
-                      SourceJson: JSON.stringify(SourceJson),
-                      SelectedNodePath: JSON.stringify(SelectedNodePath),
-                      stateVariableName: JSON.stringify(
-                        apiName + "_" + stateVariableName
-                      ),
-                      codeSnippet: JSON.stringify(codeSnippet),
-                      jsonType: jsonType,
-                    },
-                    success: function (manipulateState_Results) {
-                      console.log(JSON.stringify(manipulateState_Results));
-                      if ($("#exampleModalScrollableTitle1").is(":visible")) {
-                        $("#exampleModalScrollable1").modal("hide");
-                      }
-                    },
+            if ($("#SampleNodeForStateVariable").is(":visible")) {
+              //SELECTED NODE LOGIC
+              SelectedTempdata =
+                SelectedTempdata +
+                ";" +
+                $("#exampleModalLabel4").text() +
+                ":" +
+                SelectedNodePath;
+              $("#selectedNodeElementHidden").text(SelectedTempdata);
+            } else {
+              var apiName = $("#exampleModalScrollableTitle").text();
+              var customKey = $("#exampleModalScrollableTitle").attr(
+                "element_Key"
+              );
+              $.ajax({
+                url: "http://127.0.0.1:5000/GetAPIData",
+                type: "POST",
+                data: {
+                  apiName: JSON.stringify(apiName),
+                },
+                success: function (results) {
+                  var SourceJson;
+                  var codeSnippet;
+                  var jsonType;
+                  if ($("#exampleModalScrollableTitle").is(":visible")) {
+                    SourceJson = JSON.parse(results.request);
+                    jsonType = "request";
+                  } else if (
+                    $("#exampleModalScrollableTitle1").is(":visible")
+                  ) {
+                    SourceJson = JSON.parse(results.response);
+                    jsonType = "response";
+                  }
+                  codeSnippet = results.codeSnippet;
+                  bootbox.prompt("Enter State Variable Name", function (
+                    stateVariableName
+                  ) {
+                    console.log(SourceJson);
+                    console.log(SelectedNodePath);
+                    console.log(apiName + "_" + stateVariableName);
+                    console.log(customKey);
+                    console.log(codeSnippet);
+                    $.ajax({
+                      url: "http://127.0.0.1:5000/manipulateState",
+                      type: "POST",
+                      data: {
+                        customKey: JSON.stringify(customKey),
+                        SourceJson: JSON.stringify(SourceJson),
+                        SelectedNodePath: JSON.stringify(SelectedNodePath),
+                        stateVariableName: JSON.stringify(
+                          apiName + "_" + stateVariableName
+                        ),
+                        codeSnippet: JSON.stringify(codeSnippet),
+                        jsonType: jsonType,
+                      },
+                      success: function (manipulateState_Results) {
+                        console.log(JSON.stringify(manipulateState_Results));
+                        if ($("#exampleModalScrollableTitle1").is(":visible")) {
+                          $("#exampleModalScrollable1").modal("hide");
+                        }
+                      },
+                    });
                   });
-                });
-              },
-            });
+                },
+              });
+            }
+
             return;
           }
 

@@ -1,5 +1,9 @@
 var webpage = "";
 var replacedParameters = [];
+var droppedElement;
+var selectedStateVariable;
+var selectedrequestStateVariable;
+var selectedActionFunction;
 function supportstorage() {
   if (typeof window.localStorage == "object") return true;
   else return false;
@@ -317,6 +321,8 @@ function downloadLayoutSrc() {
       ["api_name"],
       ["schema_name"],
       ["custom_key"],
+      ["onchange"],
+      ["onclick"],
     ],
   });
   $("#download-layout").html(formatSrc);
@@ -328,7 +334,8 @@ function downloadLayoutSrc() {
     url: "http://127.0.0.1:5000/JSXGenerator",
     type: "POST",
     data: {
-      uiBlockName: JSON.stringify(webpage),
+      webpage: JSON.stringify(webpage),
+      uiBlockName: JSON.stringify($("#BlockNameMentionedHere").text().trim()),
     },
     success: function (result) {
       console.log(result);
@@ -387,6 +394,8 @@ function downloadLayoutSrcCustom() {
       ["aria-hidden"],
       ["data-slide-to"],
       ["data-slide"],
+      ["onchange"],
+      ["onclick"],
     ],
   });
   $("#download-layout").html(formatSrc);
@@ -528,6 +537,9 @@ $(document).ready(function () {
       /*$("#containerProgressBar .box .preview")
         .parent()
         .hide();*/
+      //CLEAR PRESELECTED NODES AND SELECTED NODES FROM SAMPLE NODE
+      $("#selectedNodeElementHidden").empty();
+      //END OF CLEAR PRESELECTED NODES AND SELECTED NODES FROM SAMPLE NODE
       var thislement = $(this);
       var element2 = thislement.attr("class").replace(/\s/g, ".");
       var element1 = $(t.toElement).attr("class").replace(/\s/g, ".");
@@ -542,11 +554,11 @@ $(document).ready(function () {
         "." + element2
       );
       if (className.length != 0) {
-        var droppedElement = $("#containerProgressBar").find(
+        droppedElement = $("#containerProgressBar").find(
           "." + element2 + " " + tagName + "[class=" + className + "]"
         );
       } else if (className.length == 0) {
-        var droppedElement = $("#containerProgressBar").find(
+        droppedElement = $("#containerProgressBar").find(
           "." + element2 + " " + tagName
         );
       }
@@ -556,25 +568,149 @@ $(document).ready(function () {
         droppedElement = droppedElement.first();
       }
       console.log(droppedElement);
-      //REPLACE LOGIC
-      droppedElement.html(function () {
-        return $(this).html().replace("Card_Header_For_MutipleCard", "title");
-      });
+      //REPLACE LOGIC //VERY VERY IMPORTANT
       /*droppedElement.html(function () {
-        return $(this)
-          .html()
-          .replace("<PROPERTY TO BE REPLACED>", "<JSON NODE TO BE CHOSEN");
+        return $(this).html().replace("Card_Header_For_MutipleCard", "title");
       });*/
       console.log(droppedElement.parent().html());
       //START FROM HERE.....
-      var currentParametersForComponent = parametersForComponent(
-        droppedElement.parent().html()
-      );
+
       if (className == "form-control" && tagName !== "SELECT") {
+        //INPUT FORM ELEMENTS HANDLING
+        vex.dialog.open({
+          message: "Select Request State Variable..",
+          input: [
+            '<select class="form-control" name="requeststateVariableSelection" id="requeststateVariableSelection" onchange="GetSelectedRequestStateVariable(this)" onclick="GetAvailableRequestStateVariablesAndShow()"></select>',
+          ].join(""),
+          buttons: [$.extend({}, vex.dialog.buttons.YES, { text: "Next>>" })],
+          callback: function (data) {
+            if (!data) {
+              console.log("Cancelled");
+            } else {
+              console.log("Username", data.requeststateVariableSelection);
+              //this.APINAME_STATEVARIABLE_NAME.bind(this)
+              var apiName = data.requeststateVariableSelection.split("@")[1];
+              var selectedrequestStateVariable = data.requeststateVariableSelection.split(
+                "@"
+              )[2];
+              var onChangeFunctionName =
+                "{this.OnChange" +
+                "_" +
+                selectedrequestStateVariable +
+                ".bind(this)}";
+              onChangeFunctionName = onChangeFunctionName.replace(/"/g, "");
+              droppedElement.attr("onchange", onChangeFunctionName);
+              //  OnChange_GetLatestNews_Reques1 = (e) => {this.setState({ GetLatestNews_Reques1: e.target.value });};
+              $.ajax({
+                url: "http://127.0.0.1:5000/EventCodeGenerator",
+                type: "POST",
+                data: {
+                  actionFunction: JSON.stringify(
+                    "OnChange_" + selectedrequestStateVariable
+                  ),
+                  stateVariable: JSON.stringify(selectedrequestStateVariable),
+                },
+                success: function (results) {},
+              });
+            }
+          },
+        });
       }
       if (className == "form-control" && tagName === "SELECT") {
         alert("Select Logic");
         alert(tagName);
+      }
+      if (className == "btn") {
+        //BUTTON ELEMENTS HANDLING
+        vex.dialog.open({
+          message: "Select action function to be invoked..",
+          input: [
+            '<select class="form-control" name="requestActionFunction" id="requestActionFunction" onchange="GetSelectedActionFunction(this)" onclick="GetAvailableActionFunctionAndShow()"></select>',
+          ].join(""),
+          buttons: [$.extend({}, vex.dialog.buttons.YES, { text: "Next>>" })],
+          callback: function (data) {
+            if (!data) {
+              console.log("Cancelled");
+            } else {
+              console.log("Username", data.requestActionFunction);
+              //this.APINAME_STATEVARIABLE_NAME.bind(this)
+              var apiName = data.requestActionFunction.split("@")[1];
+              var actionFunctionToBeCalled = data.requestActionFunction.split(
+                "@"
+              )[2];
+              var selectedrequestStateVariable = data.requestActionFunction.split(
+                "@"
+              )[3];
+              var onClickFunctionName =
+                "{this.OnClick" +
+                "_" +
+                selectedrequestStateVariable +
+                ".bind(this)}";
+              onClickFunctionName = onClickFunctionName.replace(/"/g, "");
+              droppedElement.attr("onclick", onClickFunctionName);
+              //  OnChange_GetLatestNews_Reques1 = (e) => {this.setState({ GetLatestNews_Reques1: e.target.value });};
+              $.ajax({
+                url: "http://127.0.0.1:5000/ButtonCodeGenerator",
+                type: "POST",
+                data: {
+                  actionFunction: JSON.stringify(
+                    "OnClick_" + selectedrequestStateVariable
+                  ),
+                  actionFunctionToBeCalled: JSON.stringify(
+                    actionFunctionToBeCalled
+                  ),
+                },
+                success: function (results) {},
+              });
+            }
+          },
+        });
+      }
+      if (className !== "form-control" && className != "btn") {
+        var currentParametersForComponent = parametersForComponent(
+          droppedElement.parent().html()
+        );
+        console.log(currentParametersForComponent);
+        var htmlParameters = [];
+        for (var p = 0; p < currentParametersForComponent.length; p++) {
+          htmlParameters.push(
+            '<a href="#" onclick="getClickedElement(this)" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#SampleNodeForStateVariable">' +
+              currentParametersForComponent[p] +
+              "</a>"
+          );
+        }
+        console.log(htmlParameters.join(",", " "));
+        $("#elementParameters").empty();
+        $("#elementParameters").append(htmlParameters.join(",", " "));
+        //$("#exampleModalScrollable2").modal("show");
+        vex.dialog.open({
+          message: "Select State Variable..",
+          input: [
+            '<select class="form-control" name="stateVariableSelection" id="stateVariableSelection" onchange="GetSelectedStateVariable(this)" onclick="GetAvailableStateVariablesAndShow()"></select>',
+          ].join(""),
+          buttons: [$.extend({}, vex.dialog.buttons.YES, { text: "Next>>" })],
+          callback: function (data) {
+            if (!data) {
+              console.log("Cancelled");
+            } else {
+              console.log("Username", data.stateVariableSelection);
+              $("#exampleModalScrollable2").modal("show");
+              var wrapper = document.getElementById("tree4");
+              wrapper.remove();
+              var newWrapper = document.createElement("div");
+              newWrapper.setAttribute("id", "tree4");
+              newWrapper.setAttribute(
+                "style",
+                "width: 1000px; height: 500px; overflow-y: scroll;"
+              );
+              var newWrapperParent = document.getElementById("modelBodyTree4");
+              newWrapperParent.appendChild(newWrapper);
+              var tree = jsonTree.create({}, newWrapper);
+              tree.loadData(JSON.parse(data.stateVariableSelection));
+              tree.expand();
+            }
+          },
+        });
       }
       //Associate_HTML_WITH_API(t, uiBlock, thislement);
       console.log("DEVELOPER LAYOUT");
@@ -889,25 +1025,90 @@ function AddSchema() {
   });
 }
 
-function GetAvailableSchemaAndShow() {
-  if ($("#availableSchema").find("option").length == 0) {
-    $("#availableSchema").empty();
+function GetAvailableStateVariablesAndShow() {
+  if ($("#stateVariableSelection").find("option").length == 0) {
+    $("#stateVariableSelection").empty();
+    $("#stateVariableSelection").append(
+      $("<option></option>")
+        .attr("value", "Select Value..")
+        .text("Select Value..")
+    );
     $.ajax({
-      url: "http://127.0.0.1:5000/getAllAvailableSchemas",
+      url: "http://127.0.0.1:5000/getStateVariableNames",
       type: "POST",
       success: function (results) {
         console.log(results);
-        results.map((result) => {
-          $("#availableSchema").append(
+        results.getResponseStateVariables.map((result) => {
+          $("#stateVariableSelection").append(
             $("<option></option>")
-              .attr("value", result.schemaName)
-              .text(result.schemaName)
+              .attr("value", result.sampleValueForStateVariable)
+              .attr("stateVariableNode", result.stateVariableNode)
+              .text(result.StateVariableName)
           );
         });
       },
     });
   }
 }
+
+function GetAvailableRequestStateVariablesAndShow() {
+  if ($("#requeststateVariableSelection").find("option").length == 0) {
+    $("#requeststateVariableSelection").empty();
+    $.ajax({
+      url: "http://127.0.0.1:5000/getRequestStateVariableNames",
+      type: "POST",
+      success: function (results) {
+        console.log(results);
+        results.getRequestStateVariables.map((result) => {
+          $("#requeststateVariableSelection").append(
+            $("<option></option>")
+              .attr(
+                "value",
+                result.sampleValueForStateVariable +
+                  "@" +
+                  result.apiName +
+                  "@" +
+                  result.StateVariableName
+              )
+              .attr("stateVariableNode", result.stateVariableNode)
+              .text(result.StateVariableName)
+          );
+        });
+      },
+    });
+  }
+}
+
+function GetAvailableActionFunctionAndShow() {
+  if ($("#requestActionFunction").find("option").length == 0) {
+    $("#requestActionFunction").empty();
+    $.ajax({
+      url: "http://127.0.0.1:5000/getRequestStateVariableNames",
+      type: "POST",
+      success: function (results) {
+        console.log(results);
+        results.getRequestStateVariables.map((result) => {
+          $("#requestActionFunction").append(
+            $("<option></option>")
+              .attr(
+                "value",
+                result.sampleValueForStateVariable +
+                  "@" +
+                  result.apiName +
+                  "@" +
+                  result.actionFunction +
+                  "@" +
+                  result.StateVariableName
+              )
+              .attr("stateVariableNode", result.stateVariableNode)
+              .text(result.actionFunction)
+          );
+        });
+      },
+    });
+  }
+}
+
 function SelectedColumns(obj) {
   console.log(obj.val());
 }
@@ -937,7 +1138,14 @@ function APIFunction(obj) {
       .text(obj.value)
   );*/
 }
+
 function saveHtml() {
+  var cpath = window.location.href;
+  cpath = cpath.substring(0, cpath.lastIndexOf("/"));
+  console.log(webpage);
+}
+
+function saveHtmlBkp() {
   var cpath = window.location.href;
   cpath = cpath.substring(0, cpath.lastIndexOf("/"));
   webpage =
@@ -1132,3 +1340,52 @@ var parametersForComponent = (htmlElement) => {
   }
   return returnParameters;
 };
+function getClickedElement(element) {
+  $("#exampleModalLabel4").text(element.innerText);
+}
+
+document
+  .getElementById("updatedDroppedElement")
+  .addEventListener("click", updatedDroppedContents);
+
+function updatedDroppedContents() {
+  console.log(selectedStateVariable);
+  console.log(droppedElement.parent().html());
+  parametersReplacedValueCombination = $("#selectedNodeElementHidden").text();
+  parametersReplacedValueCombinationlength = parametersReplacedValueCombination.split(
+    ";"
+  ).length;
+  for (i = 1; i < parametersReplacedValueCombinationlength; i++) {
+    droppedElement.html(function () {
+      return $(this)
+        .html()
+        .replace(
+          parametersReplacedValueCombination.split(";")[i].split(":")[0],
+          parametersReplacedValueCombination
+            .split(";")
+            [i].split(":")[1]
+            .replace("$.", "")
+        );
+    });
+  }
+  droppedElement.parent().html(function () {
+    return $(this)
+      .html()
+      .replace("STATE_VARIABLE_TO_BE_PLACED", selectedStateVariable);
+  });
+  console.log(droppedElement.parent().html());
+}
+
+function GetSelectedStateVariable(element) {
+  selectedStateVariable = $("#stateVariableSelection option:selected").text();
+}
+
+function GetSelectedRequestStateVariable(element) {
+  selectedrequestStateVariable = $(
+    "#requeststateVariableSelection option:selected"
+  ).text();
+}
+
+function GetSelectedActionFunction(element) {
+  selectedActionFunction = $("#requestActionFunction option:selected").text();
+}

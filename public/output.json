@@ -10,21 +10,21 @@
 			{
 				"country": "USA",
 				"cases": {
-					"new": "+132",
-					"active": 975306,
-					"critical": 15827,
-					"recovered": 213109,
-					"total": 1263224
+					"new": "+2513",
+					"active": 1080530,
+					"critical": 16248,
+					"recovered": 339578,
+					"total": 1510286
 				},
 				"deaths": {
-					"new": "+10",
-					"total": 74809
+					"new": "+65",
+					"total": 90178
 				},
 				"tests": {
-					"total": 8005589
+					"total": 11991168
 				},
-				"day": "2020-05-07",
-				"time": "2020-05-07T09:45:04+00:00"
+				"day": "2020-05-17",
+				"time": "2020-05-17T14:45:05+00:00"
 			}
 		]
 	},
@@ -32,7 +32,7 @@
 		"get": "countries",
 		"parameters": [],
 		"errors": [],
-		"results": 219,
+		"results": 220,
 		"response": [
 			"Afghanistan",
 			"Albania",
@@ -147,6 +147,7 @@
 			"Laos",
 			"Latvia",
 			"Lebanon",
+			"Lesotho",
 			"Liberia",
 			"Libya",
 			"Liechtenstein",
@@ -261,8 +262,1832 @@
 			"country": "india"
 		},
 		"errors": [],
-		"results": 271,
+		"results": 367,
 		"response": [
+			{
+				"country": "India",
+				"cases": {
+					"new": "+801",
+					"active": 53908,
+					"critical": 0,
+					"recovered": 34645,
+					"total": 91449
+				},
+				"deaths": {
+					"new": "+25",
+					"total": 2896
+				},
+				"tests": {
+					"total": 2227642
+				},
+				"day": "2020-05-17",
+				"time": "2020-05-17T14:45:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+666",
+					"active": 53836,
+					"critical": 0,
+					"recovered": 34581,
+					"total": 91314
+				},
+				"deaths": {
+					"new": "+26",
+					"total": 2897
+				},
+				"tests": {
+					"total": 2227642
+				},
+				"day": "2020-05-17",
+				"time": "2020-05-17T12:30:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+279",
+					"active": 53831,
+					"critical": 0,
+					"recovered": 34224,
+					"total": 90927
+				},
+				"deaths": {
+					"new": "+1",
+					"total": 2872
+				},
+				"tests": {
+					"total": 2227642
+				},
+				"day": "2020-05-17",
+				"time": "2020-05-17T08:30:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+279",
+					"active": 53831,
+					"critical": 0,
+					"recovered": 34224,
+					"total": 90927
+				},
+				"deaths": {
+					"new": "+1",
+					"total": 2872
+				},
+				"tests": {
+					"total": 2134277
+				},
+				"day": "2020-05-17",
+				"time": "2020-05-17T04:00:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+4864",
+					"active": 53553,
+					"critical": 0,
+					"recovered": 34224,
+					"total": 90648
+				},
+				"deaths": {
+					"new": "+118",
+					"total": 2871
+				},
+				"tests": {
+					"total": 2134277
+				},
+				"day": "2020-05-17",
+				"time": "2020-05-17T03:45:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+4831",
+					"active": 53524,
+					"critical": 0,
+					"recovered": 34220,
+					"total": 90615
+				},
+				"deaths": {
+					"new": "+118",
+					"total": 2871
+				},
+				"tests": {
+					"total": 2134277
+				},
+				"day": "2020-05-16",
+				"time": "2020-05-16T19:30:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+4614",
+					"active": 53608,
+					"critical": 0,
+					"recovered": 33928,
+					"total": 90398
+				},
+				"deaths": {
+					"new": "+109",
+					"total": 2862
+				},
+				"tests": {
+					"total": 2134277
+				},
+				"day": "2020-05-16",
+				"time": "2020-05-16T18:00:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+4559",
+					"active": 53829,
+					"critical": 0,
+					"recovered": 33657,
+					"total": 90343
+				},
+				"deaths": {
+					"new": "+104",
+					"total": 2857
+				},
+				"tests": {
+					"total": 2134277
+				},
+				"day": "2020-05-16",
+				"time": "2020-05-16T17:30:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+2722",
+					"active": 54960,
+					"critical": 0,
+					"recovered": 30786,
+					"total": 88506
+				},
+				"deaths": {
+					"new": "+7",
+					"total": 2760
+				},
+				"tests": {
+					"total": 2134277
+				},
+				"day": "2020-05-16",
+				"time": "2020-05-16T16:45:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+811",
+					"active": 53049,
+					"critical": 0,
+					"recovered": 30786,
+					"total": 86595
+				},
+				"deaths": {
+					"new": "+7",
+					"total": 2760
+				},
+				"tests": {
+					"total": 2134277
+				},
+				"day": "2020-05-16",
+				"time": "2020-05-16T15:15:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+724",
+					"active": 52975,
+					"critical": 0,
+					"recovered": 30773,
+					"total": 86508
+				},
+				"deaths": {
+					"new": "+7",
+					"total": 2760
+				},
+				"tests": {
+					"total": 2134277
+				},
+				"day": "2020-05-16",
+				"time": "2020-05-16T12:00:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+156",
+					"active": 52929,
+					"critical": 0,
+					"recovered": 30258,
+					"total": 85940
+				},
+				"deaths": {
+					"new": null,
+					"total": 2753
+				},
+				"tests": {
+					"total": 2134277
+				},
+				"day": "2020-05-16",
+				"time": "2020-05-16T09:00:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+156",
+					"active": 52929,
+					"critical": 0,
+					"recovered": 30258,
+					"total": 85940
+				},
+				"deaths": {
+					"new": null,
+					"total": 2753
+				},
+				"tests": {
+					"total": 2039952
+				},
+				"day": "2020-05-16",
+				"time": "2020-05-16T04:15:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3787",
+					"active": 52773,
+					"critical": 0,
+					"recovered": 30258,
+					"total": 85784
+				},
+				"deaths": {
+					"new": "+104",
+					"total": 2753
+				},
+				"tests": {
+					"total": 2039952
+				},
+				"day": "2020-05-16",
+				"time": "2020-05-16T03:45:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3787",
+					"active": 52797,
+					"critical": 0,
+					"recovered": 30234,
+					"total": 85784
+				},
+				"deaths": {
+					"new": "+104",
+					"total": 2753
+				},
+				"tests": {
+					"total": 2039952
+				},
+				"day": "2020-05-15",
+				"time": "2020-05-15T23:45:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3763",
+					"active": 52773,
+					"critical": 0,
+					"recovered": 30234,
+					"total": 85760
+				},
+				"deaths": {
+					"new": "+104",
+					"total": 2753
+				},
+				"tests": {
+					"total": 2039952
+				},
+				"day": "2020-05-15",
+				"time": "2020-05-15T18:45:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3549",
+					"active": 52711,
+					"critical": 0,
+					"recovered": 30089,
+					"total": 85546
+				},
+				"deaths": {
+					"new": "+97",
+					"total": 2746
+				},
+				"tests": {
+					"total": 2039952
+				},
+				"day": "2020-05-15",
+				"time": "2020-05-15T17:15:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+1075",
+					"active": 51618,
+					"critical": 0,
+					"recovered": 28792,
+					"total": 83072
+				},
+				"deaths": {
+					"new": "+13",
+					"total": 2662
+				},
+				"tests": {
+					"total": 2039952
+				},
+				"day": "2020-05-15",
+				"time": "2020-05-15T15:45:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3942",
+					"active": 51379,
+					"critical": 0,
+					"recovered": 27969,
+					"total": 81997
+				},
+				"deaths": {
+					"new": "+98",
+					"total": 2649
+				},
+				"tests": {
+					"total": 1947041
+				},
+				"day": "2020-05-15",
+				"time": "2020-05-15T02:15:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3935",
+					"active": 51372,
+					"critical": 0,
+					"recovered": 27969,
+					"total": 81990
+				},
+				"deaths": {
+					"new": "+98",
+					"total": 2649
+				},
+				"tests": {
+					"total": 1947041
+				},
+				"day": "2020-05-14",
+				"time": "2020-05-14T20:30:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3935",
+					"active": 51385,
+					"critical": 0,
+					"recovered": 27956,
+					"total": 81990
+				},
+				"deaths": {
+					"new": "+98",
+					"total": 2649
+				},
+				"tests": {
+					"total": 1947041
+				},
+				"day": "2020-05-14",
+				"time": "2020-05-14T18:30:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3650",
+					"active": 51270,
+					"critical": 0,
+					"recovered": 27791,
+					"total": 81705
+				},
+				"deaths": {
+					"new": "+93",
+					"total": 2644
+				},
+				"tests": {
+					"total": 1947041
+				},
+				"day": "2020-05-14",
+				"time": "2020-05-14T16:45:06+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+1278",
+					"active": 50094,
+					"critical": 0,
+					"recovered": 26675,
+					"total": 79333
+				},
+				"deaths": {
+					"new": "+13",
+					"total": 2564
+				},
+				"tests": {
+					"total": 1947041
+				},
+				"day": "2020-05-14",
+				"time": "2020-05-14T16:15:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+755",
+					"active": 49571,
+					"critical": 0,
+					"recovered": 26675,
+					"total": 78810
+				},
+				"deaths": {
+					"new": "+13",
+					"total": 2564
+				},
+				"tests": {
+					"total": 1947041
+				},
+				"day": "2020-05-14",
+				"time": "2020-05-14T13:45:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+139",
+					"active": 49243,
+					"critical": 0,
+					"recovered": 26400,
+					"total": 78194
+				},
+				"deaths": {
+					"new": null,
+					"total": 2551
+				},
+				"tests": {
+					"total": 1947041
+				},
+				"day": "2020-05-14",
+				"time": "2020-05-14T09:30:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+66",
+					"active": 49170,
+					"critical": 0,
+					"recovered": 26400,
+					"total": 78121
+				},
+				"deaths": {
+					"new": null,
+					"total": 2551
+				},
+				"tests": {
+					"total": 1947041
+				},
+				"day": "2020-05-14",
+				"time": "2020-05-14T04:30:03+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": null,
+					"active": 49104,
+					"critical": 0,
+					"recovered": 26400,
+					"total": 78055
+				},
+				"deaths": {
+					"new": null,
+					"total": 2551
+				},
+				"tests": {
+					"total": 1947041
+				},
+				"day": "2020-05-14",
+				"time": "2020-05-14T04:15:03+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3763",
+					"active": 49104,
+					"critical": 0,
+					"recovered": 26400,
+					"total": 78055
+				},
+				"deaths": {
+					"new": "+136",
+					"total": 2551
+				},
+				"tests": {
+					"total": 1854250
+				},
+				"day": "2020-05-14",
+				"time": "2020-05-14T04:00:03+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3763",
+					"active": 49112,
+					"critical": 0,
+					"recovered": 26392,
+					"total": 78055
+				},
+				"deaths": {
+					"new": "+136",
+					"total": 2551
+				},
+				"tests": {
+					"total": 1854250
+				},
+				"day": "2020-05-13",
+				"time": "2020-05-13T18:45:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3750",
+					"active": 49099,
+					"critical": 0,
+					"recovered": 26392,
+					"total": 78042
+				},
+				"deaths": {
+					"new": "+136",
+					"total": 2551
+				},
+				"tests": {
+					"total": 1854250
+				},
+				"day": "2020-05-13",
+				"time": "2020-05-13T18:15:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3749",
+					"active": 49098,
+					"critical": 0,
+					"recovered": 26392,
+					"total": 78041
+				},
+				"deaths": {
+					"new": "+136",
+					"total": 2551
+				},
+				"tests": {
+					"total": 1854250
+				},
+				"day": "2020-05-13",
+				"time": "2020-05-13T18:00:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3749",
+					"active": 49190,
+					"critical": 0,
+					"recovered": 26300,
+					"total": 78041
+				},
+				"deaths": {
+					"new": "+136",
+					"total": 2551
+				},
+				"tests": {
+					"total": 1854250
+				},
+				"day": "2020-05-13",
+				"time": "2020-05-13T17:45:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3749",
+					"active": 49309,
+					"critical": 0,
+					"recovered": 26186,
+					"total": 78041
+				},
+				"deaths": {
+					"new": "+131",
+					"total": 2546
+				},
+				"tests": {
+					"total": 1854250
+				},
+				"day": "2020-05-13",
+				"time": "2020-05-13T17:00:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3597",
+					"active": 49157,
+					"critical": 0,
+					"recovered": 26186,
+					"total": 77889
+				},
+				"deaths": {
+					"new": "+131",
+					"total": 2546
+				},
+				"tests": {
+					"total": 1854250
+				},
+				"day": "2020-05-13",
+				"time": "2020-05-13T16:45:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3437",
+					"active": 49217,
+					"critical": 0,
+					"recovered": 25977,
+					"total": 77729
+				},
+				"deaths": {
+					"new": "+120",
+					"total": 2535
+				},
+				"tests": {
+					"total": 1854250
+				},
+				"day": "2020-05-13",
+				"time": "2020-05-13T16:31:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+756",
+					"active": 47708,
+					"critical": 0,
+					"recovered": 24900,
+					"total": 75048
+				},
+				"deaths": {
+					"new": "+25",
+					"total": 2440
+				},
+				"tests": {
+					"total": 1854250
+				},
+				"day": "2020-05-13",
+				"time": "2020-05-13T15:15:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+633",
+					"active": 47602,
+					"critical": 0,
+					"recovered": 24887,
+					"total": 74925
+				},
+				"deaths": {
+					"new": "+21",
+					"total": 2436
+				},
+				"tests": {
+					"total": 1854250
+				},
+				"day": "2020-05-13",
+				"time": "2020-05-13T11:45:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+188",
+					"active": 47612,
+					"critical": 0,
+					"recovered": 24453,
+					"total": 74480
+				},
+				"deaths": {
+					"new": null,
+					"total": 2415
+				},
+				"tests": {
+					"total": 1854250
+				},
+				"day": "2020-05-13",
+				"time": "2020-05-13T08:00:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+101",
+					"active": 47525,
+					"critical": 0,
+					"recovered": 24453,
+					"total": 74393
+				},
+				"deaths": {
+					"new": null,
+					"total": 2415
+				},
+				"tests": {
+					"total": 1854250
+				},
+				"day": "2020-05-13",
+				"time": "2020-05-13T04:15:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3524",
+					"active": 47457,
+					"critical": 0,
+					"recovered": 24420,
+					"total": 74292
+				},
+				"deaths": {
+					"new": "+121",
+					"total": 2415
+				},
+				"tests": {
+					"total": 1759579
+				},
+				"day": "2020-05-13",
+				"time": "2020-05-13T04:00:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3475",
+					"active": 47408,
+					"critical": 0,
+					"recovered": 24420,
+					"total": 74243
+				},
+				"deaths": {
+					"new": "+121",
+					"total": 2415
+				},
+				"tests": {
+					"total": 1759579
+				},
+				"day": "2020-05-12",
+				"time": "2020-05-12T23:30:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3475",
+					"active": 47704,
+					"critical": 0,
+					"recovered": 24124,
+					"total": 74243
+				},
+				"deaths": {
+					"new": "+121",
+					"total": 2415
+				},
+				"tests": {
+					"total": 1759579
+				},
+				"day": "2020-05-12",
+				"time": "2020-05-12T19:45:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3213",
+					"active": 47449,
+					"critical": 0,
+					"recovered": 24124,
+					"total": 73981
+				},
+				"deaths": {
+					"new": "+114",
+					"total": 2408
+				},
+				"tests": {
+					"total": 1759579
+				},
+				"day": "2020-05-12",
+				"time": "2020-05-12T18:30:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3213",
+					"active": 48370,
+					"critical": 0,
+					"recovered": 23203,
+					"total": 73981
+				},
+				"deaths": {
+					"new": "+114",
+					"total": 2408
+				},
+				"tests": {
+					"total": 1759579
+				},
+				"day": "2020-05-12",
+				"time": "2020-05-12T16:15:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+1825",
+					"active": 47059,
+					"critical": 0,
+					"recovered": 23203,
+					"total": 72593
+				},
+				"deaths": {
+					"new": "+37",
+					"total": 2331
+				},
+				"tests": {
+					"total": 1759579
+				},
+				"day": "2020-05-12",
+				"time": "2020-05-12T16:00:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+798",
+					"active": 46165,
+					"critical": 0,
+					"recovered": 23090,
+					"total": 71566
+				},
+				"deaths": {
+					"new": "+17",
+					"total": 2311
+				},
+				"tests": {
+					"total": 1759579
+				},
+				"day": "2020-05-12",
+				"time": "2020-05-12T14:15:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+673",
+					"active": 46072,
+					"critical": 0,
+					"recovered": 23059,
+					"total": 71441
+				},
+				"deaths": {
+					"new": "+16",
+					"total": 2310
+				},
+				"tests": {
+					"total": 1759579
+				},
+				"day": "2020-05-12",
+				"time": "2020-05-12T14:00:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+673",
+					"active": 46082,
+					"critical": 0,
+					"recovered": 23049,
+					"total": 71441
+				},
+				"deaths": {
+					"new": "+16",
+					"total": 2310
+				},
+				"tests": {
+					"total": 1759579
+				},
+				"day": "2020-05-12",
+				"time": "2020-05-12T13:00:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+601",
+					"active": 46010,
+					"critical": 0,
+					"recovered": 23049,
+					"total": 71369
+				},
+				"deaths": {
+					"new": "+16",
+					"total": 2310
+				},
+				"tests": {
+					"total": 1759579
+				},
+				"day": "2020-05-12",
+				"time": "2020-05-12T12:15:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+601",
+					"active": 46026,
+					"critical": 0,
+					"recovered": 23033,
+					"total": 71369
+				},
+				"deaths": {
+					"new": "+16",
+					"total": 2310
+				},
+				"tests": {
+					"total": 1759579
+				},
+				"day": "2020-05-12",
+				"time": "2020-05-12T12:00:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+580",
+					"active": 46005,
+					"critical": 0,
+					"recovered": 23033,
+					"total": 71348
+				},
+				"deaths": {
+					"new": "+16",
+					"total": 2310
+				},
+				"tests": {
+					"total": 1759579
+				},
+				"day": "2020-05-12",
+				"time": "2020-05-12T11:45:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+571",
+					"active": 45996,
+					"critical": 0,
+					"recovered": 23033,
+					"total": 71339
+				},
+				"deaths": {
+					"new": "+16",
+					"total": 2310
+				},
+				"tests": {
+					"total": 1759579
+				},
+				"day": "2020-05-12",
+				"time": "2020-05-12T11:30:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+59",
+					"active": 45984,
+					"critical": 0,
+					"recovered": 22549,
+					"total": 70827
+				},
+				"deaths": {
+					"new": null,
+					"total": 2294
+				},
+				"tests": {
+					"total": 1759579
+				},
+				"day": "2020-05-12",
+				"time": "2020-05-12T09:00:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+12",
+					"active": 45937,
+					"critical": 0,
+					"recovered": 22549,
+					"total": 70780
+				},
+				"deaths": {
+					"new": null,
+					"total": 2294
+				},
+				"tests": {
+					"total": 1759579
+				},
+				"day": "2020-05-12",
+				"time": "2020-05-12T04:15:03+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3607",
+					"active": 45925,
+					"critical": 0,
+					"recovered": 22549,
+					"total": 70768
+				},
+				"deaths": {
+					"new": "+82",
+					"total": 2294
+				},
+				"tests": {
+					"total": 1673688
+				},
+				"day": "2020-05-12",
+				"time": "2020-05-12T03:45:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3604",
+					"active": 45922,
+					"critical": 0,
+					"recovered": 22549,
+					"total": 70765
+				},
+				"deaths": {
+					"new": "+82",
+					"total": 2294
+				},
+				"tests": {
+					"total": 1673688
+				},
+				"day": "2020-05-11",
+				"time": "2020-05-11T19:15:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3556",
+					"active": 46762,
+					"critical": 0,
+					"recovered": 21664,
+					"total": 70717
+				},
+				"deaths": {
+					"new": "+79",
+					"total": 2291
+				},
+				"tests": {
+					"total": 1673688
+				},
+				"day": "2020-05-11",
+				"time": "2020-05-11T17:00:06+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+2239",
+					"active": 45482,
+					"critical": 0,
+					"recovered": 21664,
+					"total": 69400
+				},
+				"deaths": {
+					"new": "+42",
+					"total": 2254
+				},
+				"tests": {
+					"total": 1673688
+				},
+				"day": "2020-05-11",
+				"time": "2020-05-11T16:30:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+2133",
+					"active": 45376,
+					"critical": 0,
+					"recovered": 21664,
+					"total": 69294
+				},
+				"deaths": {
+					"new": "+42",
+					"total": 2254
+				},
+				"tests": {
+					"total": 1673688
+				},
+				"day": "2020-05-11",
+				"time": "2020-05-11T16:00:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+1988",
+					"active": 45236,
+					"critical": 0,
+					"recovered": 21664,
+					"total": 69149
+				},
+				"deaths": {
+					"new": "+37",
+					"total": 2249
+				},
+				"tests": {
+					"total": 1673688
+				},
+				"day": "2020-05-11",
+				"time": "2020-05-11T15:30:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+1628",
+					"active": 45300,
+					"critical": 0,
+					"recovered": 21266,
+					"total": 68789
+				},
+				"deaths": {
+					"new": "+11",
+					"total": 2223
+				},
+				"tests": {
+					"total": 1673688
+				},
+				"day": "2020-05-11",
+				"time": "2020-05-11T14:45:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+563",
+					"active": 44354,
+					"critical": 0,
+					"recovered": 21155,
+					"total": 67724
+				},
+				"deaths": {
+					"new": "+3",
+					"total": 2215
+				},
+				"tests": {
+					"total": 1673688
+				},
+				"day": "2020-05-11",
+				"time": "2020-05-11T14:00:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+553",
+					"active": 44349,
+					"critical": 0,
+					"recovered": 21150,
+					"total": 67714
+				},
+				"deaths": {
+					"new": "+3",
+					"total": 2215
+				},
+				"tests": {
+					"total": 1673688
+				},
+				"day": "2020-05-11",
+				"time": "2020-05-11T12:15:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+540",
+					"active": 44339,
+					"critical": 0,
+					"recovered": 21147,
+					"total": 67701
+				},
+				"deaths": {
+					"new": "+3",
+					"total": 2215
+				},
+				"tests": {
+					"total": 1673688
+				},
+				"day": "2020-05-11",
+				"time": "2020-05-11T11:45:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+539",
+					"active": 44355,
+					"critical": 0,
+					"recovered": 21130,
+					"total": 67700
+				},
+				"deaths": {
+					"new": "+3",
+					"total": 2215
+				},
+				"tests": {
+					"total": 1673688
+				},
+				"day": "2020-05-11",
+				"time": "2020-05-11T11:15:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+98",
+					"active": 44078,
+					"critical": 0,
+					"recovered": 20969,
+					"total": 67259
+				},
+				"deaths": {
+					"new": null,
+					"total": 2212
+				},
+				"tests": {
+					"total": 1673688
+				},
+				"day": "2020-05-11",
+				"time": "2020-05-11T10:15:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": null,
+					"active": 43980,
+					"critical": 0,
+					"recovered": 20969,
+					"total": 67161
+				},
+				"deaths": {
+					"new": null,
+					"total": 2212
+				},
+				"tests": {
+					"total": 1673688
+				},
+				"day": "2020-05-11",
+				"time": "2020-05-11T04:15:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+4353",
+					"active": 43980,
+					"critical": 0,
+					"recovered": 20969,
+					"total": 67161
+				},
+				"deaths": {
+					"new": "+111",
+					"total": 2212
+				},
+				"tests": {
+					"total": 1609037
+				},
+				"day": "2020-05-11",
+				"time": "2020-05-11T03:45:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+4330",
+					"active": 43957,
+					"critical": 0,
+					"recovered": 20969,
+					"total": 67138
+				},
+				"deaths": {
+					"new": "+111",
+					"total": 2212
+				},
+				"tests": {
+					"total": 1609037
+				},
+				"day": "2020-05-10",
+				"time": "2020-05-10T18:15:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+4236",
+					"active": 44022,
+					"critical": 0,
+					"recovered": 20815,
+					"total": 67044
+				},
+				"deaths": {
+					"new": "+106",
+					"total": 2207
+				},
+				"tests": {
+					"total": 1609037
+				},
+				"day": "2020-05-10",
+				"time": "2020-05-10T17:45:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+2213",
+					"active": 43203,
+					"critical": 0,
+					"recovered": 19665,
+					"total": 65021
+				},
+				"deaths": {
+					"new": "+52",
+					"total": 2153
+				},
+				"tests": {
+					"total": 1609037
+				},
+				"day": "2020-05-10",
+				"time": "2020-05-10T17:15:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+1633",
+					"active": 42648,
+					"critical": 0,
+					"recovered": 19665,
+					"total": 64441
+				},
+				"deaths": {
+					"new": "+27",
+					"total": 2128
+				},
+				"tests": {
+					"total": 1609037
+				},
+				"day": "2020-05-10",
+				"time": "2020-05-10T15:15:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+1331",
+					"active": 42667,
+					"critical": 0,
+					"recovered": 19358,
+					"total": 64139
+				},
+				"deaths": {
+					"new": "+13",
+					"total": 2114
+				},
+				"tests": {
+					"total": 1609037
+				},
+				"day": "2020-05-10",
+				"time": "2020-05-10T14:45:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+131",
+					"active": 41472,
+					"critical": 0,
+					"recovered": 19358,
+					"total": 62939
+				},
+				"deaths": {
+					"new": "+8",
+					"total": 2109
+				},
+				"tests": {
+					"total": 1609037
+				},
+				"day": "2020-05-10",
+				"time": "2020-05-10T13:00:06+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+131",
+					"active": 41472,
+					"critical": 0,
+					"recovered": 19358,
+					"total": 62939
+				},
+				"deaths": {
+					"new": "+8",
+					"total": 2109
+				},
+				"tests": {
+					"total": 1523213
+				},
+				"day": "2020-05-10",
+				"time": "2020-05-10T04:30:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3113",
+					"active": 41406,
+					"critical": 0,
+					"recovered": 19301,
+					"total": 62808
+				},
+				"deaths": {
+					"new": "+116",
+					"total": 2101
+				},
+				"tests": {
+					"total": 1523213
+				},
+				"day": "2020-05-10",
+				"time": "2020-05-10T03:45:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3113",
+					"active": 42035,
+					"critical": 0,
+					"recovered": 18672,
+					"total": 62808
+				},
+				"deaths": {
+					"new": "+116",
+					"total": 2101
+				},
+				"tests": {
+					"total": 1523213
+				},
+				"day": "2020-05-09",
+				"time": "2020-05-09T18:45:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3074",
+					"active": 42008,
+					"critical": 0,
+					"recovered": 18672,
+					"total": 62769
+				},
+				"deaths": {
+					"new": "+104",
+					"total": 2089
+				},
+				"tests": {
+					"total": 1523213
+				},
+				"day": "2020-05-09",
+				"time": "2020-05-09T18:30:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+2826",
+					"active": 41760,
+					"critical": 0,
+					"recovered": 18672,
+					"total": 62521
+				},
+				"deaths": {
+					"new": "+104",
+					"total": 2089
+				},
+				"tests": {
+					"total": 1523213
+				},
+				"day": "2020-05-09",
+				"time": "2020-05-09T17:30:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+1661",
+					"active": 40643,
+					"critical": 0,
+					"recovered": 18672,
+					"total": 61356
+				},
+				"deaths": {
+					"new": "+56",
+					"total": 2041
+				},
+				"tests": {
+					"total": 1523213
+				},
+				"day": "2020-05-09",
+				"time": "2020-05-09T16:15:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+186",
+					"active": 39935,
+					"critical": 0,
+					"recovered": 17956,
+					"total": 59881
+				},
+				"deaths": {
+					"new": "+5",
+					"total": 1990
+				},
+				"tests": {
+					"total": 1523213
+				},
+				"day": "2020-05-09",
+				"time": "2020-05-09T15:15:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+70",
+					"active": 39882,
+					"critical": 0,
+					"recovered": 17897,
+					"total": 59765
+				},
+				"deaths": {
+					"new": "+1",
+					"total": 1986
+				},
+				"tests": {
+					"total": 1523213
+				},
+				"day": "2020-05-09",
+				"time": "2020-05-09T11:30:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": null,
+					"active": 39823,
+					"critical": 0,
+					"recovered": 17887,
+					"total": 59695
+				},
+				"deaths": {
+					"new": null,
+					"total": 1985
+				},
+				"tests": {
+					"total": 1523213
+				},
+				"day": "2020-05-09",
+				"time": "2020-05-09T05:15:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3344",
+					"active": 39823,
+					"critical": 0,
+					"recovered": 17887,
+					"total": 59695
+				},
+				"deaths": {
+					"new": "+96",
+					"total": 1985
+				},
+				"tests": {
+					"total": 1437788
+				},
+				"day": "2020-05-09",
+				"time": "2020-05-09T03:45:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3342",
+					"active": 39821,
+					"critical": 0,
+					"recovered": 17887,
+					"total": 59693
+				},
+				"deaths": {
+					"new": "+96",
+					"total": 1985
+				},
+				"tests": {
+					"total": 1437788
+				},
+				"day": "2020-05-09",
+				"time": "2020-05-09T00:30:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3342",
+					"active": 39825,
+					"critical": 0,
+					"recovered": 17883,
+					"total": 59693
+				},
+				"deaths": {
+					"new": "+96",
+					"total": 1985
+				},
+				"tests": {
+					"total": 1437788
+				},
+				"day": "2020-05-08",
+				"time": "2020-05-08T21:30:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3291",
+					"active": 39774,
+					"critical": 0,
+					"recovered": 17883,
+					"total": 59642
+				},
+				"deaths": {
+					"new": "+96",
+					"total": 1985
+				},
+				"tests": {
+					"total": 1437788
+				},
+				"day": "2020-05-08",
+				"time": "2020-05-08T18:45:06+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+2854",
+					"active": 39527,
+					"critical": 0,
+					"recovered": 17698,
+					"total": 59205
+				},
+				"deaths": {
+					"new": "+91",
+					"total": 1980
+				},
+				"tests": {
+					"total": 1437788
+				},
+				"day": "2020-05-08",
+				"time": "2020-05-08T17:30:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+955",
+					"active": 38366,
+					"critical": 0,
+					"recovered": 17041,
+					"total": 57306
+				},
+				"deaths": {
+					"new": "+10",
+					"total": 1899
+				},
+				"tests": {
+					"total": 1437788
+				},
+				"day": "2020-05-08",
+				"time": "2020-05-08T16:30:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+165",
+					"active": 37754,
+					"critical": 0,
+					"recovered": 16867,
+					"total": 56516
+				},
+				"deaths": {
+					"new": "+6",
+					"total": 1895
+				},
+				"tests": {
+					"total": 1437788
+				},
+				"day": "2020-05-08",
+				"time": "2020-05-08T13:30:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+58",
+					"active": 37729,
+					"critical": 0,
+					"recovered": 16790,
+					"total": 56409
+				},
+				"deaths": {
+					"new": "+1",
+					"total": 1890
+				},
+				"tests": {
+					"total": 1437788
+				},
+				"day": "2020-05-08",
+				"time": "2020-05-08T09:00:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+32",
+					"active": 37718,
+					"critical": 0,
+					"recovered": 16776,
+					"total": 56383
+				},
+				"deaths": {
+					"new": null,
+					"total": 1889
+				},
+				"tests": {
+					"total": 1437788
+				},
+				"day": "2020-05-08",
+				"time": "2020-05-08T04:45:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+32",
+					"active": 37718,
+					"critical": 0,
+					"recovered": 16776,
+					"total": 56383
+				},
+				"deaths": {
+					"new": null,
+					"total": 1889
+				},
+				"tests": {
+					"total": 1357413
+				},
+				"day": "2020-05-08",
+				"time": "2020-05-08T04:00:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3364",
+					"active": 37686,
+					"critical": 0,
+					"recovered": 16776,
+					"total": 56351
+				},
+				"deaths": {
+					"new": "+104",
+					"total": 1889
+				},
+				"tests": {
+					"total": 1357413
+				},
+				"day": "2020-05-08",
+				"time": "2020-05-08T03:45:05+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+3338",
+					"active": 37660,
+					"critical": 0,
+					"recovered": 16776,
+					"total": 56325
+				},
+				"deaths": {
+					"new": "+104",
+					"total": 1889
+				},
+				"tests": {
+					"total": 1357413
+				},
+				"day": "2020-05-07",
+				"time": "2020-05-07T19:00:04+00:00"
+			},
+			{
+				"country": "India",
+				"cases": {
+					"new": "+1552",
+					"active": 36654,
+					"critical": 0,
+					"recovered": 16048,
+					"total": 54539
+				},
+				"deaths": {
+					"new": "+52",
+					"total": 1837
+				},
+				"tests": {
+					"total": 1357413
+				},
+				"day": "2020-05-07",
+				"time": "2020-05-07T18:00:05+00:00"
+			},
 			{
 				"country": "India",
 				"cases": {
@@ -280,7 +2105,7 @@
 					"total": 1357413
 				},
 				"day": "2020-05-07",
-				"time": "2020-05-07T09:45:04+00:00"
+				"time": "2020-05-07T17:00:05+00:00"
 			},
 			{
 				"country": "India",
@@ -5416,7 +7241,7 @@
 	},
 	{
 		"total": {
-			"value": 24,
+			"value": 53,
 			"relation": "eq"
 		},
 		"from": 0,
@@ -5429,6 +7254,528 @@
 			}
 		],
 		"articles": [
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Pharmaceutical Logistics Market In North America 2020-2024 | Rise in Pharmaceutical Sales to Boost Growth | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--Technavio has been monitoring the pharmaceutical logistics market in North America and it is poised to grow by USD 4.33 billion during 2020-2024, progressing at a CAGR of about 3% during the forecast period. The report offers an up-to-date analysis regarding the current market scenario, latest trends and drivers, and the overall market environment.",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-pharmaceutical-logistics-market-in-north-america-2020-2024--rise-in-ph-491bcf751148ac7f14b5fafcbe08a9a2",
+				"imageUrl": "",
+				"publishedAt": "2020-05-16T03:30:00+00:00",
+				"id": "491bcf751148ac7f14b5fafcbe08a9a2",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Technavio Evaluates the Impact of Increasing Adoption of Energy-Efficient Elevators and Escalators in its Elevator and Escalator Market in Germany Analysis for the Forecast Period 2020-2024",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--The elevator and escalator market in Germany is likely to experience steady growth because of the increasing adoption of energy-efficient elevators and escalators. Rising at a CAGR of almost 4%, the market is estimated to have an incremental growth of USD 605.72 million by 2024. Download Free Sample Report",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-technavio-evaluates-the-impact-of-increasing-adoption-of-energy-effici-e4bbc683cf7f0d15eabba481ff476df2",
+				"imageUrl": "",
+				"publishedAt": "2020-05-16T02:30:00+00:00",
+				"id": "e4bbc683cf7f0d15eabba481ff476df2",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Laparoscopic Devices Market 2020-2024 | Increasing Popularity of MI Techniques to Boost Growth | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--Technavio has been monitoring the laparoscopic devices market and it is poised to grow by USD 3.92 billion during 2020-2024, progressing at a CAGR of over 7% during the forecast period. The report offers an up-to-date analysis regarding the current market scenario, latest trends and drivers, and the overall market environment.",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-laparoscopic-devices-market-2020-2024--increasing-popularity-of-mi-tec-44223d743fec11b69083dcc258b68b34",
+				"imageUrl": "",
+				"publishedAt": "2020-05-16T02:00:00+00:00",
+				"id": "44223d743fec11b69083dcc258b68b34",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Technavio Evaluates the Impact of High Demand for Steel from Various End-user Industries and the Use of Lightweight Materials in the Automotive Industry in its Magnesium Market Analysis for the Forecast Period 2020-2024",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--The magnesium market is likely to experience steady growth because of the high demand for steel from various end-user industries & the use of lightweight materials in the automotive industry. Rising at a CAGR of almost 6%, the market is estimated to have an incremental growth of 390.21 k MT by 2024. Download Free Sample Report",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-technavio-evaluates-the-impact-of-high-demand-for-steel-from-various-e-47459225764565a1f1f48e2fd4f242c1",
+				"imageUrl": "",
+				"publishedAt": "2020-05-16T01:30:00+00:00",
+				"id": "47459225764565a1f1f48e2fd4f242c1",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Technavio Evaluates the Impact of the Declining Price of Li-ion Batteries and Rising Focus on Renewable Power Generation in its Battery Additives Market Analysis",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--The battery additives market is likely to experience steady growth because of the declining price of Li-ion batteries & rising focus on renewable power generation. Rising at a CAGR of over 11%, the market is estimated to have an incremental growth of USD 834.29 million by 2024. Download Free Sample Report",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-technavio-evaluates-the-impact-of-the-declining-price-of-li-ion-batter-19379a7ead9935a5701471c10cb6fd76",
+				"imageUrl": "",
+				"publishedAt": "2020-05-16T01:00:00+00:00",
+				"id": "19379a7ead9935a5701471c10cb6fd76",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Global Cleanroom Technology Equipment Market 2020-2024 | Evolving Opportunities with Alpiq Holding Ltd. and Ansell Ltd. | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--The global cleanroom technology equipment market is expected to grow by USD 1.36 billion as per Technavio. This marks a significant market slowdown compared to the 2019 growth estimates due to the impact of the COVID-19 pandemic in the first half of 2020. However, healthy growth is expected to continue throughout the forecast period, and the market is expected to grow at a CAGR of almost 6%.",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-global-cleanroom-technology-equipment-market-2020-2024--evolving-oppor-c71e5e47901ceb45ef8a5d9045cbdfcd",
+				"imageUrl": "",
+				"publishedAt": "2020-05-16T00:00:00+00:00",
+				"id": "c71e5e47901ceb45ef8a5d9045cbdfcd",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Global Wind Turbine Bearing Market 2020-2024 | Evolving Opportunities with AB SKF and Dalian Metallurgical Bearing Co. Ltd. | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--The global wind turbine bearing market is expected to grow by USD 7.22 billion during 2020-2024, as per Technavio. Healthy growth is expected to continue throughout the forecast period, and the market is expected to grow at a CAGR of almost 11%.",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-global-wind-turbine-bearing-market-2020-2024--evolving-opportunities-w-74a40ed116530e2e388394341324eab8",
+				"imageUrl": "",
+				"publishedAt": "2020-05-15T23:30:00+00:00",
+				"id": "74a40ed116530e2e388394341324eab8",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Global Automotive Sunroof Market 2020-2024 | Growing Popularity of SUVs to Boost Market Growth | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--The global automotive sunroof market size is expected to grow by USD 6.35 billion during 2020-2024. The report also provides the market impact and new opportunities created due to the COVID-19 pandemic. The impact can be expected to be significant in the first quarter but gradually lessen in subsequent quarters – with a limited impact on the full-year economic growth, according to the latest market research report by Technavio. Request a free sample report",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-global-automotive-sunroof-market-2020-2024--growing-popularity-of-suvs-0bbde8c8ba66dd969a3da31387646fd9",
+				"imageUrl": "",
+				"publishedAt": "2020-05-15T23:00:00+00:00",
+				"id": "0bbde8c8ba66dd969a3da31387646fd9",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Global Electric Vehicle Battery Market 2020-2024 | Evolving Opportunities with A123 Systems LLC and Ballard Power Systems Inc. | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--The global electric vehicle battery market is expected to grow by USD 44.24 billion as per Technavio. This marks a significant market slowdown compared to the 2019 growth estimates due to the impact of the COVID-19 pandemic in the first half of 2020. However, healthy growth is expected to continue throughout the forecast period, and the market is expected to grow at a CAGR of almost 22%. Request free sample pages",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-global-electric-vehicle-battery-market-2020-2024--evolving-opportuniti-2d8b5db4621fab63ca6506d6121f3fde",
+				"imageUrl": "",
+				"publishedAt": "2020-05-15T22:30:00+00:00",
+				"id": "2d8b5db4621fab63ca6506d6121f3fde",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Industrial Girth Gear Market 2020-2024 | Improvement In Girth Gear Manufacturing Technologies To Boost Growth | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--Technavio has been monitoring the industrial girth gear market and it is poised to grow by USD 23.97 mn during 2020-2024, progressing at a CAGR of almost 1% during the forecast period. The report offers an up-to-date analysis regarding the current market scenario, latest trends and drivers, and the overall market environment.",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-industrial-girth-gear-market-2020-2024--improvement-in-girth-gear-manu-03112afca8b6cd9e6568a9366aba9225",
+				"imageUrl": "",
+				"publishedAt": "2020-05-15T21:30:00+00:00",
+				"id": "03112afca8b6cd9e6568a9366aba9225",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Animal Disinfectant Market 2020-2024 | Increasing Prevalence Of Infectious Diseases In Animals To Boost Growth | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--Technavio has been monitoring the animal disinfectant market and it is poised to grow by USD 2.00 million during 2020-2024, progressing at a CAGR of almost 15% during the forecast period. The report offers an up-to-date analysis regarding the current market scenario, latest trends and drivers, and the overall market environment.",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-animal-disinfectant-market-2020-2024--increasing-prevalence-of-infecti-8de8be7cc3c296676a64988f671ed8ae",
+				"imageUrl": "",
+				"publishedAt": "2020-05-15T20:30:00+00:00",
+				"id": "8de8be7cc3c296676a64988f671ed8ae",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Home Beer Brewing Machine Market 2020-2024 | Introduction of Innovative Features to Boost Growth | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--Technavio has been monitoring the home beer brewing machine market and it is poised to grow by USD 14.53 million during 2020-2024. The report offers an up-to-date analysis regarding the current market scenario, latest trends and drivers, and the overall market environment.",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-home-beer-brewing-machine-market-2020-2024--introduction-of-innovative-83d834c3a7965e19047bf8aa7e5f21e1",
+				"imageUrl": "",
+				"publishedAt": "2020-05-15T20:00:00+00:00",
+				"id": "83d834c3a7965e19047bf8aa7e5f21e1",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Ophthalmology Devices Market 2020-2024 | Increasing Prevalence of Ophthalmic Diseases to Boost Growth | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--Technavio has been monitoring the ophthalmology devices market and it is poised to grow by USD 13.03 billion during 2020-2024, progressing at a CAGR of over 3% during the forecast period. The report offers an up-to-date analysis regarding the current market scenario, latest trends and drivers, and the overall market environment.",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-ophthalmology-devices-market-2020-2024--increasing-prevalence-of-ophth-0610a4ec64e3cbe45952a76fef27faa6",
+				"imageUrl": "",
+				"publishedAt": "2020-05-15T19:30:00+00:00",
+				"id": "0610a4ec64e3cbe45952a76fef27faa6",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Global Mycoplasma Testing Market 2020-2024 | Evolving Opportunities with Agilent Technologies Inc. and ATCC | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--The global mycoplasma testing market size is expected to grow by USD 445.57 million as per Technavio. This marks a significant market growth compared to the 2019 growth estimates due to the impact of the COVID-19 pandemic in the first half of 2020. Moreover, steady growth is expected to continue throughout the forecast period, and the market is expected to grow at a CAGR of over 11%.",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-global-mycoplasma-testing-market-2020-2024--evolving-opportunities-wit-8ee07f0507657f812b04da380722d4d9",
+				"imageUrl": "",
+				"publishedAt": "2020-05-15T19:00:00+00:00",
+				"id": "8ee07f0507657f812b04da380722d4d9",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Global Paracetamol Market 2020-2024 | Evolving Opportunities with Anhui BBCA Likang Pharmaceutical Co. Ltd. and Anqiu Luan Pharmaceutical Co. Ltd. | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--The global paracetamol market size is expected to decline by USD 484.77 million as per Technavio. Despite the impact of the COVID-19 pandemic, market growth is expected to decelerate at a CAGR of about 8%.",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-global-paracetamol-market-2020-2024--evolving-opportunities-with-anhui-61d93fedf225950b82f23493402102c2",
+				"imageUrl": "",
+				"publishedAt": "2020-05-15T18:30:00+00:00",
+				"id": "61d93fedf225950b82f23493402102c2",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Global Upper Respiratory Tract Infection Treatment Market 2020-2024 | Evolving Opportunities with AstraZeneca Plc and CSL Ltd. | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--The global upper respiratory tract infection treatment market size is expected to grow by USD 1.79 billion as per Technavio. This marks a significant market growth compared to the 2019 growth estimates due to the impact of the COVID-19 pandemic in the first half of 2020. Moreover, healthy growth is expected to continue throughout the forecast period, and the market is expected to grow at a CAGR of over 3%.",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-global-upper-respiratory-tract-infection-treatment-market-2020-2024--e-a64eac9bb1c6447cb5c6098950a69e47",
+				"imageUrl": "",
+				"publishedAt": "2020-05-15T18:00:00+00:00",
+				"id": "a64eac9bb1c6447cb5c6098950a69e47",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Global Industrial Synchronous Belt Drives Market 2020-2024 | Evolving Opportunities with AB SKF and ABB Ltd. | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--The global industrial synchronous belt drives market is expected to grow by USD 488.87 million during 2020-2024, as per Technavio. Healthy growth is expected to continue throughout the forecast period, and the market is expected to grow at a CAGR of almost 4%.",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-global-industrial-synchronous-belt-drives-market-2020-2024--evolving-o-a94aed3f745956eea1ac33381658b8d1",
+				"imageUrl": "",
+				"publishedAt": "2020-05-15T17:30:00+00:00",
+				"id": "a94aed3f745956eea1ac33381658b8d1",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Global Faucet Market 2020-2024 | Changing Consumer Preference And Lifestyle To Boost Market Growth | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--The global faucet market size is expected to grow by USD 7.87 billion during 2020-2024. The report also provides the market impact and new opportunities created due to the COVID-19 pandemic. The impact can be expected to be significant in the first quarter but gradually lessen in subsequent quarters – with a limited impact on the full-year economic growth, according to the latest market research report by Technavio. Request a free sample report",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-global-faucet-market-2020-2024--changing-consumer-preference-and-lifes-a3cd9d8cba9862af4037ce154e2d3acf",
+				"imageUrl": "",
+				"publishedAt": "2020-05-15T16:30:00+00:00",
+				"id": "a3cd9d8cba9862af4037ce154e2d3acf",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Global Quantum Sensors Market 2020-2024 | Rising Investments in Quantum Technology to Boost Market Growth | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--The global quantum sensors market size is expected to grow by USD 79.81 million during 2020-2024. The report also provides the market impact and new opportunities created due to the COVID-19 pandemic. The impact can be expected to be significant in the first quarter but gradually lessen in subsequent quarters – with a limited impact on the full-year economic growth, according to the latest market research report by Technavio. Request a free sample report",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-global-quantum-sensors-market-2020-2024--rising-investments-in-quantum-731329d73aaf5fb99f0e37f1dbaa4b6b",
+				"imageUrl": "",
+				"publishedAt": "2020-05-15T15:30:00+00:00",
+				"id": "731329d73aaf5fb99f0e37f1dbaa4b6b",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Reflective Sportswear Market 2020-2024 | Improved Marketing Strategies by Key Competitors to Boost Market Growth | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--The reflective sportswear market is expected to grow by USD 628.28 million during 2020-2024. The report also provides the market impact and new opportunities created due to the COVID-19 pandemic. The impact can be expected to be significant in the first quarter but gradually lessen in subsequent quarters – with a limited impact on the full-year economic growth, according to the latest market research report by Technavio.",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-reflective-sportswear-market-2020-2024--improved-marketing-strategies--c1c0f56da7b13df230d38e227ff0a872",
+				"imageUrl": "",
+				"publishedAt": "2020-05-15T14:30:00+00:00",
+				"id": "c1c0f56da7b13df230d38e227ff0a872",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Global Food Flavors Market 2020-2024 | Evolving Opportunities with Archer Daniels Midland Co. and BASF SE | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--The global food flavors market is expected to grow by USD 2.75 billion as per Technavio. This marks a significant market slowdown compared to the 2019 growth estimates due to the impact of the COVID-19 pandemic in the first half of 2020. However, steady growth is expected to continue throughout the forecast period, and the market is expected to grow at a CAGR of over 4%.",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-global-food-flavors-market-2020-2024--evolving-opportunities-with-arch-14a0fc25f5b345bd51eacd100fb87da3",
+				"imageUrl": "",
+				"publishedAt": "2020-05-15T14:00:00+00:00",
+				"id": "14a0fc25f5b345bd51eacd100fb87da3",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Global Semiconductor Advanced Packaging Market 2020-2024 | Growing Demand for Compact Electronic Devices to Boost Market Growth | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--The semiconductor advanced packaging market is expected to grow by USD 14.41 billion during 2020-2024. The report also provides the market impact and new opportunities created due to the COVID-19 pandemic. The impact can be expected to be significant in the first quarter but gradually lessen in subsequent quarters – with a limited impact on the full-year economic growth, according to the latest market research report by Technavio. Request a free sample report",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-global-semiconductor-advanced-packaging-market-2020-2024--growing-dema-1cc2435dbd78b0d1f9f8a72de19922b8",
+				"imageUrl": "",
+				"publishedAt": "2020-05-15T13:30:00+00:00",
+				"id": "1cc2435dbd78b0d1f9f8a72de19922b8",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "prNewswire",
+					"name": "PR Newswire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Outsourcing biology CRO and preclinical research studies during COVID19 pandemic",
+				"content": "",
+				"description": "While the COVID-19 pandemic continues to evolve, many Cancer Research Institutions and Pharma/Biotech companies are considering how to restart the...",
+				"url": "https://newsfilter.io/articles/outsourcing-biology-cro-and-preclinical-research-studies-during-covid19-pandemic-7552e072e9b283176a3087e401806aae",
+				"imageUrl": "",
+				"publishedAt": "2020-05-15T07:18:00-04:00",
+				"id": "7552e072e9b283176a3087e401806aae",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "prNewswire",
+					"name": "PR Newswire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Global University Systems Canada Launches GUS CARES Initiative, Supporting Canadians in Need, Through the United Way #COVID19",
+				"content": "",
+				"description": "Global University Systems Canada (GUS Canada) has launched an initiative to support Canadians and vulnerable populations through non-profit...",
+				"url": "https://newsfilter.io/articles/global-university-systems-canada-launches-gus-cares-initiative-supporting-canadians-in-need-through--fdb78b5ac82b36f86a7a6914743aac77",
+				"imageUrl": "",
+				"publishedAt": "2020-05-14T08:10:00-04:00",
+				"id": "fdb78b5ac82b36f86a7a6914743aac77",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "globenewswire",
+					"name": "GlobeNewswire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Neocase Software, HR digitalization SaaS platform, raises €6 million round to foster its international growth during the Covid19 crisis",
+				"content": "",
+				"description": "Neocase Software, a global HR service management platform vendor, announces a new €6 million fundraising round led by Entrepreneur Venture, alongside Sofiouest, the management team and historical...",
+				"url": "https://newsfilter.io/articles/neocase-software-hr-digitalization-saas-platform-raises-6-million-round-to-foster-its-international--fbddc36c0f84372ceacb25d95c270e37",
+				"imageUrl": "",
+				"publishedAt": "2020-05-14T08:04:09-04:00",
+				"id": "fbddc36c0f84372ceacb25d95c270e37",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Global Bread Maker Market 2020-2024 | Increasing Number of Product Launches to Boost Market Growth | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--The bread maker market is expected to grow by USD 4.18 billion during 2020-2024. The report also provides the market impact and new opportunities created due to the COVID-19 pandemic. The impact can be expected to be significant in the first quarter but gradually lessen in subsequent quarters – with a limited impact on the full-year economic growth, according to the latest market research report by Technavio.",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-global-bread-maker-market-2020-2024--increasing-number-of-product-laun-9b6b1da549084daeb9646af622abbd0f",
+				"imageUrl": "",
+				"publishedAt": "2020-05-14T03:30:00+00:00",
+				"id": "9b6b1da549084daeb9646af622abbd0f",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Asynchronous Motor Market 2020-2024 | Focus on Automating Manufacturing Process to Boost Growth | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--Technavio has been monitoring the asynchronous motor market and it is poised to grow by USD 12.06 billion during 2020-2024, progressing at a CAGR of almost 10% during the forecast period. The report offers an up-to-date analysis regarding the current market scenario, latest trends and drivers, and the overall market environment.",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-asynchronous-motor-market-2020-2024--focus-on-automating-manufacturing-357bd332a9e6b21a5733de5ce5cc170e",
+				"imageUrl": "",
+				"publishedAt": "2020-05-14T03:00:00+00:00",
+				"id": "357bd332a9e6b21a5733de5ce5cc170e",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "businesswire",
+					"name": "BusinessWire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Analysis on Impact of COVID19-Global Bidets Market 2020-2024 | Evolving Opportunities with Duravit AG and Geberit AG | Technavio",
+				"content": "",
+				"description": "LONDON--(BUSINESS WIRE)--The global bidets market size is expected to grow by USD 1.29 billion as per Technavio. This marks a significant market slowdown compared to the 2019 growth estimates due to the impact of the COVID-19 pandemic in the first half of 2020. However, steady growth is expected to continue throughout the forecast period, and the market is expected to grow at a CAGR of over 6%.",
+				"url": "https://newsfilter.io/articles/analysis-on-impact-of-covid19-global-bidets-market-2020-2024--evolving-opportunities-with-duravit-ag-eff4e8b87c2fe0f63b4e07b33c5545c4",
+				"imageUrl": "",
+				"publishedAt": "2020-05-14T02:45:00+00:00",
+				"id": "eff4e8b87c2fe0f63b4e07b33c5545c4",
+				"industries": [],
+				"sectors": []
+			},
+			{
+				"source": {
+					"id": "prNewswire",
+					"name": "PR Newswire"
+				},
+				"categories": [],
+				"symbols": [],
+				"markets": [],
+				"title": "Orndee Public Relations Announces Representation Of The Benassi Family, Targeted By Conspiracy Theorists And Blamed For COVID19",
+				"content": "",
+				"description": "Orndee Public Relations (OrndeePR), a public relations and crisis communications firm specializing in the representation of survivors, victims, and...",
+				"url": "https://newsfilter.io/articles/orndee-public-relations-announces-representation-of-the-benassi-family-targeted-by-conspiracy-theori-39ba57e5a51c02b158e56d9a01a14ce7",
+				"imageUrl": "",
+				"publishedAt": "2020-05-12T12:32:00-04:00",
+				"id": "39ba57e5a51c02b158e56d9a01a14ce7",
+				"industries": [],
+				"sectors": []
+			},
 			{
 				"source": {
 					"id": "prNewswire",
